@@ -1,0 +1,244 @@
+
+header{
+   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/background_img.jpeg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: 100vh;
+   width: 100%;
+   background-attachment: fixed;
+   
+   
+}
+
+.row{
+    background-color: #131627;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+
+}
+
+.row img{
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: 110px;
+    opacity: 0.6;
+}
+.row nav{
+    /* background-color: #09558A; */
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 75px;
+    padding-right: 35px;
+     /* width: calc(100% - 500px); */
+    
+}
+.row nav a:link,
+.row nav a:visited{
+    color: rgb(235, 223, 223);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    margin: 0 15px;
+    font-size: .9rem;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.row nav a:hover{
+    border-bottom: 2px solid #cf6d17;
+    transition: 0.2s;
+}
+
+header .mytext{
+    /* background-color: yellowgreen; */
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    margin-top: 8px;
+}
+
+header .mytext h3{
+    margin: 0;
+    font-size: 140%;
+    padding: 20px 60px 0 0;
+    color: #afb2b4;
+    /* text-align: center; */
+}
+ .btn{
+    background-color: #e67e22;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    display: flex;
+    width: 200px;
+    height: auto;
+    position: relative;
+    left: 40%;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 27px;
+    font-weight: 600;
+    /* box-shadow: 0 2px 2px 0#cf6d17; */
+   
+}
+.btn:hover{
+    background-color: #b35d13;  
+}
+
+
+
+
+/*!!!!!!!!!!!!!!!MediaQuey!!!!!!!!!!!!!!!!!!*/
+
+
+
+
+@media only screen and  (min-width: 768px ) and (max-width: 1086px){
+    header .mytext h1{
+       font-size: 200%;  
+    }
+    header .mytext h3{
+        font-size: 110%;
+    }
+    header .mytext .btn{
+        font-size: .8rem;
+        width: 160px;
+        height: 50px;  
+    } 
+    .max{
+        width: 100%; 
+    }
+   
+    .row nav a{
+        margin: 0 12px;
+        font-size: .9rem;
+    }
+   
+}
+@media screen and (max-width: 814px) {
+    .row nav{
+        width: 500px; 
+        margin-right: 53px;
+        padding-right: 0px;  
+        
+    }
+    .row nav a{
+        font-size: .8rem;
+    }
+   
+}
+
+@media only screen and  (min-width: 612px ) and (max-width: 767px){
+    .row{
+        display: flex;
+        position: relative;
+        height: 190px;
+    
+    }
+    .row nav{
+        position: absolute;
+        margin-left: 50px;
+        margin-top: 50px;
+        
+    }
+    .row nav a{
+       text-align: center;
+       vertical-align: middle;
+        
+    }
+    header .mytext{
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+    header .mytext h1{
+        font-size: 139%;  
+     }
+     header .mytext h3{
+         font-size: 89%;
+     }
+     header .mytext .btn{
+    
+        font-size: .8rem;
+        width: 149px;
+        margin-top: 23px;
+        left: 34%;
+    
+       
+    }
+    .row img{
+        position: absolute;
+        top: 3%;
+         left: 28%;
+    }
+}
+@media only screen and  (min-width: 500px ) and (max-width: 611px){
+    header .mytext .btn{
+        font-size: .6rem;
+        width: 139px;
+        margin-top: 16px;
+        left: 34%; 
+    } 
+    .row{
+        display: flex;
+        position: relative;
+        height: 190px;
+    
+    }
+    .row nav{
+        position: absolute;
+        margin-left: 50px;
+        margin-top: 50px;
+        padding-right: 98px;
+        
+    }
+    .row nav a{
+       text-align: center;
+       vertical-align: middle;
+        
+    }
+    header .mytext{
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+    header .mytext h1{
+        font-size: 139%;  
+     }
+     header .mytext h3{
+         font-size: 89%;
+     }
+    
+    .row img{
+        position: absolute;
+        top: 3%;
+         left: 28%;
+    }
+    footer{
+        height: 117px;
+    }
+    footer .social h3{
+        font-size: .8rem;
+    }
+    footer .social span{
+        font-size: .6rem;
+    }
+   
+
+}
+
+
+
+
+
+
