@@ -1,37 +1,51 @@
+<!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/header.css">
+    <title>ATPL</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
+
 </head>
+
 <body>
-        <header>
-                <div class="row">
-                    <img src="./img/logo3" alt="logo">
-                    <nav>
-                        <a href="#"><h3>Home</h3></a>
-                        <a href="#"><h3>About</h3></a>
-                        <a href="blog.html" target="_blank"><h3>Blog</h3></a>
-                        <a href="#"><h3>Portifolio</h3></a>
-                        <a href="#"><h3>Contact</h3></a>
-                    </nav>
-
-                </div>
-            
-            <div class="mytext">
-                <h1>Hello, I am Adeodatus. I am full-stack web developer and Data scientist</h1>
-                <h3><em>If you’re a business seeking a web presence or 
-                    are looking to hire, We are here to give you the best.</em></h3>
-                    <a href="#" class="btn">View my work</a>
-
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./img/logo3" alt="logo">
             </div>
-        </header>
+
+            <div class="menu-toggle mobile">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-items ">
+                <li class="nav-item"><a href="#f">Home</a></li>
+                <li class="nav-item"><a href="blog.html" target="_blank">Blog</a></li>
+                <li class="nav-item"><a href="#f">About</a></li>
+                <li class="nav-item"><a href="#f">Portfolio</a></li>
+                <li class="nav-item"><a href="#f">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <main>
+        <div class="site-head">
+            <h1>Hello, I am <strong>Adeodatus</strong>. <br>A full-stack web developer and Data scientist</h1>
+            <h3><em>If you’re a business seeking a web presence or
+                    are looking to hire, We are here to give you the best.</em></h3>
+            <a href="#" class="btn">View my work</a>
+
+        </div>
+
 
 
         <!-- !!!!!!!!!!!!!!!!!!ABOUT ME!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -45,11 +59,12 @@
                 <div class="myprofile">
                     <img src="./img/mepc OG.jpg" alt="Adeodatus">
                     <h3>Who's this guy?</h3>
-                    <h4>I am Front-End developer, Data scientist and designer 
+                    <h4>I am Front-End developer, Data scientist and designer
                         and i have serious passion for UI effects. for more, <a href="#">linkedIn here</a></h4>
 
                 </div>
                 <div class="myskills">
+                    <h2>My Skills</h2>
                     <h3>Machine learning</h3>
                     <h3>CSS </h3>
                     <h3>HTML</h3>
@@ -63,7 +78,38 @@
 
         </section>
 
-<!-- !!!!!!!!!!!!!!Blog section !!!!!!!!!!!!!!!!!!!!!-->
+
+
+
+        <!-- !!!!!!!!!!!!!!!!!!!!!Portfolio!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
+        <section id="Portfolio">
+            <div class="big-text">
+                <h1>PROJECT</h1>
+            </div>
+            <div class="cards">
+                <div class="card ml">
+                    <img src="./img/ML image.jpeg" alt="ML">
+                    <p class="over-hover"><a href="#">visit</a></p>
+
+                </div>
+                <div class="card">
+                    <img src="./img/UIUX-1.jpg" alt="UI">
+                    <p class="over-hover"><a href="#">visit</a></p>
+
+                </div>
+                <div class="card">
+                    <img src="./img/manageLandingPage.jpg" alt="Landingpage">
+                    <p class="over-hover"><a href="#">visit</a></p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
 
 
         <!-- !!!!!!!!!!!!!!!!CONTACT US PART!!!!!!!!!!!!!!!! -->
@@ -72,41 +118,42 @@
 
 
         <section id="contact_us">
-              
+
             <div class="mytext">
                 <h1>We’re happy to hear from you</h1>
                 <h3>Have a conversation with us to day and see how we can help you?</h3>
             </div>
             <form method="post" action="#" class="contact-form">
-             <div class="text-area">
-                  <div class="name">
-                     <input type="text" name="name" id="name" placeholder="Your name" required>
+                <div class="text-area">
+                    <div class="name">
+                        <input type="text" name="name" id="name" placeholder="Your name" required>
                     </div>
                     <div class="email">
-                       <input type="email" name="email" id="email" placeholder="Your email" required>
-                     
+                        <input type="email" name="email" id="email" placeholder="Your email" required>
+
                     </div>
 
                     <div class="your-message">
-                      <textarea name="message" placeholder="Your message" ></textarea>
+                        <textarea name="message" placeholder="Your message" rows="4"></textarea>
 
                     </div>
+                    <div class="contact-btn">
+                        <a href="#" class="btn">Submit</a>
+                    </div>
 
-                </div>   
-         </form>
-         <div class="contact-btn"> 
-            <a href="#" class="btn">Submit</a>
-         </div>
-         
-
-         </section>
+                </div>
+            </form>
 
 
 
+        </section>
 
 
 
-         <!--!!!!!!!!!!!!!!! footer section !!!!!!!!!!!!!!!!!!!!-->
+
+
+
+        <!--!!!!!!!!!!!!!!! footer section !!!!!!!!!!!!!!!!!!!!-->
 
 
 
@@ -117,23 +164,36 @@
             <div class="social">
                 <h3>You can find as at</h3>
                 <div class="mySocial">
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-instagram"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-linkedin"></i>
-                    <i class="fa fa-envelope-o"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-envelope-o"></i>
                 </div>
-                <span>&copy;<em>2021 created by Adeodatus</em></span>   
+                <span>&copy;<em>2021 created by Adeodatus</em></span>
             </div>
         </footer>
 
-        <!-- <section class="main">
+    </main>
+
+    <!-- <section class="main">
             <div class="myself">
                 <img src="./img/" alt="">
 
             </div>
 
         </section>     -->
-    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".menu-toggle").click(function (e) {
+                $("nav ul").toggleClass("menu-displayed")
+            })
+        })
+    </script>
+
 </body>
+
 </html>

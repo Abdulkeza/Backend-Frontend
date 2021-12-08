@@ -1,35 +1,564 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
-*{
+:root {
+    --heading-font: font-family: 'Outfit', sans-serif;
+    --sub-head-font: font-family: 'Lato', sans-serif;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html, body {
     background-color: white;
-    color: white;
+    color: rgb(32, 30, 30);
     font-family: 'Robot', Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    text-rendering: optimizeLegibility;
+    font-size: 1.1rem;
+    font-weight: 400;
+    /* text-rendering: optimizeLegibility; */
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+
 }
-.clearfix {zoom: 1;}
-.clearfix::after{
+
+/* .clearfix {
+    zoom: 1;
+}
+
+.clearfix::after {
     content: '.';
     clear: both;
     display: block;
     height: 0;
     visibility: hidden;
 }
-h1{
+
+h1 {
     margin: 0;
     font-size: 200%;
     font-weight: 600;
     padding-top: 30px;
     color: rgb(223, 211, 211);
+} */
+main {
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Nav-Bar */
+header {
+    width: 100%;
+    height: 14vh;
+    background-color: rgb(255, 255, 255);
+    padding-top: 15px;
+
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    /* flex-direction: row; */
+    padding: 0 3rem;
+}
+
+nav .logo {
+    object-fit: scale-down;
+    height: 100%;
+   
+
+}
+
+nav .logo img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    padding-right: 2rem;
+    
+}
+
+nav ul li {
+    padding: .5rem 1rem;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    /* background-color: #444; */
+
+}
+.nav-items .nav-item a{
+    color: rgb(17, 16, 16);
+    font-size: .9rem;
+}
+
+.nav-items .nav-item a:link,
+.nav-items .nav-item a:visited{
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.nav-items .nav-item a:hover{
+    border-bottom: 2px solid rgb(36, 150, 55);
+    transition: 0.2s;
+}
+
+nav .menu-toggle {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    
+}
+
+.mobile {
+    display: none;
+}
+
+main .site-head {
+    height: 110vh;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/background_img.jpeg);
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/contact-us-img.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.site-head h1 {
+    color: white;
+    font-family: var(--heading-font);
+    font-weight: 500;
+    padding: 2rem 2rem;
+    font-size: 3rem;
+}
+
+.site-head h1 strong {
+    color: rgb(36, 150, 55);
+}
+
+.site-head h3 {
+    font-family: var(--sub-head-font);
+    font-weight: 400;
+    color: rgb(218, 200, 200);
+    padding: 1rem 6rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.site-head a {
+    padding: .9rem 1.8rem;
+    border-radius: 50px;
+    background-color: rgb(36, 150, 55);
+    color: rgb(13, 14, 26);
+    font-weight: 300;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+.site-head a:hover{
+    background-color: rgb(17, 100, 31);
+    color: white;
 }
 
 
+
+/* !!!!!!!!!!!!!!!!!!PORTFOLIO PART!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+#Portfolio{
+    background-color: rgb(241, 235, 235);
+    width: 100%;
+    padding: 7% 0;
+    margin-top: 140px;
+
+}
+.big-text h1{
+    text-align: center;
+
+}
+.big-text h1::after {
+    display: block;
+    height: 1.5px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 15px;
+    
+}
+#Portfolio .cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10% 0 10% 0;
+
+}
+.cards .card img{
+    width: 480;
+    height: 200px;
+    margin-right: 10px;
+    opacity: 0.8;
+}
+
+.cards .card:hover{
+    background-color: rgb(41, 37, 37);
+    transition: 0.5s;
+}
+.cards .card{
+    position: relative;
+}
+.over-hover{
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    left: 37%;
+    right: 40%;
+    color: #fff;
+    font-size: 3rem;
+    visibility: hidden;
+    opacity: 0.5;
+
+}
+.over-hover a{
+    color: #fff;
+    background-color: rgb(17, 100, 31);
+    font-size: 2rem;
+    padding: 3px 15px;
+    border-radius: 8px;
+}
+.cards .card:hover .over-hover{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.4s;
+    
+}
+
+
+
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!1 ABOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+
+
+
+#about {
+    width: 100%;
+    height: 100vh;
+    padding: 3rem;
+    text-align: center;
+    justify-content: center;
+
+}
+
+#about .main-about {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 2rem;
+    gap: 1rem;
+    justify-content: center;
+
+}
+
+
+#about .main-about img {
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+}
+
+.main-about h4 {
+    margin: 1rem auto;
+    line-height: 1.3;
+}
+
+.main-about .myprofile h3 {
+    font-size: 1.7rem;
+    font-family: var(--heading-font);
+    font-weight: bolder;
+    color: rgb(26, 29, 29);
+}
+.myprofile h4 a{
+    color: rgb(43, 153, 135);
+} 
+
+.myskills {
+    text-align: left;
+    display: block;
+    margin: auto;
+}
+
+.main-about .myskills h3 {
+    margin: 5px 0px;
+    border-radius: 5px 10px;
+    background-color: rgb(43, 153, 135);
+    padding: 10px 20px;
+    text-align: left;
+    text-transform: capitalize;
+
+}
+
+#contact_us {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2rem;
+    padding: 2rem;
+    height: fit-content;
+}
+
+#contact_us .mytext {
+    padding: 2rem;
+}
+
+.mytext h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.mytext h3 {
+    font-size: 1.1rem;
+    padding-top: 2rem;
+}
+
+form {
+    padding: 1rem 2rem;
+    /* background-color: rgb(106, 106, 194); */
+    width: 85%;
+}
+
+form .contact-btn {
+    margin: 10px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: #444;
+    text-align: center;
+    color: white;
+    width: fit-content;
+}
+
+form .contact-btn a {
+    color: white;
+}
+
+form input, textarea {
+    display: block;
+    margin: 10px;
+    padding: .4rem 2rem;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgb(116, 111, 111);
+    box-shadow: 1PX 2PX 3PX rgb(190, 186, 186);
+    color: black;
+    font-weight: bold;
+    outline: none;
+}
+
+footer {
+    width: 100%;
+    background-color: #444;
+    padding: 1rem 2rem;
+    text-align: center;
+
+}
+
+footer .social {
+    text-align: center;
+
+}
+.social .mySocial{
+    color: white;
+    letter-spacing: 5px;
+    margin-bottom: 4px;
+}
+
+footer .social h3 {
+    padding: 1rem 0rem;
+    color: white;
+}
+
+footer .social span {
+    margin: 1rem;
+    padding: 2rem;
+    color: rgb(170, 162, 162);
+}
+
+@media screen and (max-width:800px) {
+    header nav ul {
+        padding-right: 0rem;
+    }
+
+    header nav {
+        padding: 0rem;
+        width: 100%;
+        margin: 0;
+
+    }
+
+    main .site-head {
+        padding: 0rem 0rem;
+        padding-top: 6rem;
+    }
+
+    .site-head h1 {
+        font-size: 2.5rem;
+        padding: 1rem 1.5rem;
+
+    }
+
+    .site-head h3 {
+        padding: 1rem 2rem;
+        line-height: 1.5;
+        margin-bottom: 3rem;
+
+    }
+}
+
+@media screen and (max-width:554px){
+
+    nav .logo img {
+        height: 40px;
+    }
+
+    #about .main-about img {
+        height: 140px;
+        margin-bottom: 18px;
+        margin-left: 40%;
+       
+    
+    }
+
+    #Portfolio{
+        padding: 6% 0;
+        margin-top: 200px;
+    
+    }
+    .big-text h1{
+        font-size: 1.3rem;
+    
+    }
+
+    #Portfolio .cards{
+        padding: 6% 0 6% 0;
+    
+    }
+    .cards .card img{
+        width: 380;
+        height: 150px;
+        margin-right: 6px;
+    }
+
+
+    form {
+        padding: .7rem 1.7rem;
+        margin-right: 10px;
+    }
+
+    form .contact-btn {
+        margin-right: 18px;
+        padding: .7rem 1rem;
+        width: 100px;
+       
+    }
+
+
+    .mobile {
+        display: block;
+    }
+
+    .menu-toggle {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        display: block;
+        position: absolute;
+        top: 10vh;
+        background-color: azure;
+        width: 100%;
+        font-weight: bolder;
+        padding-bottom: 1rem;
+        text-align: center;
+        z-index: 10;
+        display: none;
+    }
+
+    .menu-displayed {
+        display: block;
+    }
+
+    nav .logo {
+        padding-left: 1rem;
+    }
+    .myskills {
+        margin-top: 160px;
+    }
+    .main-about .myskills h3 {
+        margin: 3px 0px;
+        padding: 7px 15px;
+
+    
+    }
+    .main-about .myprofile h4 {
+        font-size: 1.2rem;
+    }
+
+
+    
+}
+
+
+@media screen and (max-width:390px){
+    nav .logo img {
+        height: 25px;
+    }
+    .myskills h2{
+        font-size: 1.4rem;
+    }
+    .myskills h3{
+        font-size: 1.3rem;
+    }
+    .main-about .myprofile h3 {
+        font-size: 1.6rem;
+    }
+    .main-about .myprofile h4 {
+        font-size: 1rem;
+    }
+    #about .main-about img {
+        height: 100px;
+        
+    
+    }
+}
+
+/* End --Nav-Bar */
 
 
 /*!!!!!!!!!!!!!Contact-us!!!!!!!!!!!!!!!*/
@@ -37,7 +566,7 @@ h1{
 
 
 
-#contact_us{
+/* #contact_us {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/contact-us-img.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -45,35 +574,39 @@ h1{
     height: 600px;
     width: 100%;
 }
-#contact_us .mytext{
-    
+
+#contact_us .mytext {
+
     position: relative;
     width: 40%;
     left: 27.5%;
     margin-top: 8px;
 
 }
-#contact_us .mytext h1{
- font-size: 1.8rem;
- font-weight: 400;
+
+#contact_us .mytext h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
 }
-#contact_us .mytext h3{
+
+#contact_us .mytext h3 {
     margin: 0;
     font-size: 1rem;
     font-weight: 400;
     padding: 20px 60px 0 0;
     color: #afb2b4;
 }
-.contact-form{
+
+.contact-form {
     width: 50%;
     margin: 18px auto;
-    
+
 }
 
 
 input[type=text],
 input[type=email],
-textarea{
+textarea {
     width: 90%;
     padding: 10px;
     border-radius: 3px;
@@ -81,32 +614,36 @@ textarea{
     margin-left: 5%;
     margin-top: 7px;
 }
-textarea{
+
+textarea {
     height: 100px;
     font-size: .8rem;
 }
-#name, #email{
+
+#name, #email {
     height: 50px;
     font-size: 1rem;
     letter-spacing: 4px;
 }
-.contact-btn .btn{
+
+.contact-btn .btn {
     text-align: center;
     padding-left: 60px;
 }
-.contact-btn .btn:hover{
-    color: #fff; 
-}
+
+.contact-btn .btn:hover {
+    color: #fff;
+} */
 
 
 
 /*!!!!!!!!!!!!!!!!! ABOUT ME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
-#about{
+/* 
+#about {
     background-color: rgb(226, 217, 217);
 }
 
-#about .big-text{
+#about .big-text {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,15 +651,17 @@ textarea{
     position: relative;
     left: 40%;
 }
-#about .big-text h1{
+
+#about .big-text h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(87, 82, 82);
     margin-top: 40px;
-    
+
 }
-#about .big-text h1::after{
+
+#about .big-text h1::after {
     display: block;
     height: 2px;
     background-color: #e67e22;
@@ -133,48 +672,56 @@ textarea{
     position: relative;
     right: 50%;
 }
-#about .main-about{
+
+#about .main-about {
     display: flex;
     flex-direction: row;
     height: 70%;
 }
-.main-about .myprofile{
+
+.main-about .myprofile {
     width: 50%;
-   padding: 50px 90px 0 100px;
-   
+    padding: 50px 90px 0 100px;
+
 }
-.main-about .myprofile h3{
-   margin-left: 30%;
-   color: rgb(27, 25, 25);
-   
+
+.main-about .myprofile h3 {
+    margin-left: 30%;
+    color: rgb(27, 25, 25);
+
 }
-.main-about .myprofile h4{
+
+.main-about .myprofile h4 {
     text-align: center;
     color: rgb(68, 65, 65);
     line-height: 25px;
     margin-top: 10px;
-    font-size: .9rem;  
+    font-size: .9rem;
 }
-.main-about .myprofile h4 a{
+
+.main-about .myprofile h4 a {
     text-decoration: none;
     color: rgb(8, 132, 136);
 }
-.main-about .myprofile h4 a:hover{
+
+.main-about .myprofile h4 a:hover {
     color: rgb(20, 97, 197);
 }
-.myprofile img{
+
+.myprofile img {
     margin-left: 30%;
     width: 130px;
     height: 130px;
     border-radius: 50%;
     margin-bottom: 20px;
 }
-.main-about .myskills{
+
+.main-about .myskills {
     width: 50%;
     margin-top: 50px;
 }
 
-.main-about .myskills h3{
+.main-about .myskills h3 {
     font-size: 1.3rem;
     line-height: 40px;
     background-color: rgb(0, 161, 167);
@@ -182,15 +729,53 @@ textarea{
     width: 70%;
     border-radius: 4px;
     padding-left: 15px;
-    box-shadow: 1px 2px 6px rgb(3, 99, 102);;
+    box-shadow: 1px 2px 6px rgb(3, 99, 102);
+    ;
 
-}
+} */
 
 
 /*!!!!!!!!!!!!!!!!!!!!BLOG!!!!!!!!!!!!!!!!!!!!!*/
 
 
 
+@media screen and (max-width: 700px) {
 
+    /* .bar {
+        display: block;
+    }
 
+    header .row nav {
+        display: block;
+        position: absolute;
+        top: 10vh;
+        width: 100%;
+    }
 
+    header .row {
+        position: relative;
+        height: 10vh;
+        overflow: hidden;
+    }
+
+    .menu-togo {
+        height: 100vh;
+        z-index: 10;
+        overflow: visible;
+        background-color: white;
+        text-align: right;
+        color: black;
+    }
+
+    .bar {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        padding: 0.5rem 2rem;
+    } */
+
+    /* .bar:hover> .row{
+        max-height: 100vh;
+
+    } */
+}
