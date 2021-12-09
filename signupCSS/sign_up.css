@@ -78,3 +78,76 @@ p{
     margin-top: -20px;
     font-size: 1rem;
 }
+
+
+/* !!!!!!!!!!!!!!!!!!Media Query for sign-up!!!!!!!!!!!!!!!!!!!!! */
+
+@media screen and (max-width:1100px) and (min-width: 700px) {
+    .signup_form{
+        width: 40%;
+    }
+    
+}
+
+@media screen and (max-width:699px) and (min-width: 580px) {
+    .signup_form{
+        width: 50%;
+    }
+    
+}
+
+@media screen and (max-width:579px) and (min-width: 400px) {
+    .signup_form{
+        width: 60%;
+    }
+    
+}
+@media screen and (max-width:399px) and (min-width: 290px) {
+    .signup_form{
+        width: 75%;
+    }
+    
+}
+@media screen and (max-width:289px) and (min-width: 200px) {
+    .signup_form{
+        width: 88%;
+    }
+    
+}
+
+
+/* !!!!!!!!!!!!!!!!!!Media Query for Login form!!!!!!!!!!!!!!!!!!!!! */
+
+
+@media screen and (max-width:1100px) and (min-width: 700px) {
+    .login-form{
+        width: 40%;
+    }
+    
+}
+
+@media screen and (max-width:699px) and (min-width: 580px) {
+    .login-form{
+        width: 50%;
+    }
+    
+}
+
+@media screen and (max-width:579px) and (min-width: 400px) {
+    .login-form{
+        width: 60%;
+    }
+    
+}
+@media screen and (max-width:399px) and (min-width: 290px) {
+    .login-form{
+        width: 75%;
+    }
+    
+}
+@media screen and (max-width:289px) and (min-width: 200px) {
+    .login-form{
+        width: 88%;
+    }
+    
+}
