@@ -26,25 +26,7 @@ html, body {
 
 }
 
-/* .clearfix {
-    zoom: 1;
-}
 
-.clearfix::after {
-    content: '.';
-    clear: both;
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-
-h1 {
-    margin: 0;
-    font-size: 200%;
-    font-weight: 600;
-    padding-top: 30px;
-    color: rgb(223, 211, 211);
-} */
 main {
     overflow: hidden;
     width: 100%;
@@ -182,6 +164,7 @@ main .site-head {
 .site-head a:hover{
     background-color: rgb(17, 100, 31);
     color: white;
+    transition: 0.4s;
 }
 
 
@@ -288,9 +271,10 @@ main .site-head {
 
 
 #about .main-about img {
-    height: 200px;
+    height: 180px;
     border-radius: 50%;
     margin-bottom: 10px;
+    margin-top: 4rem;
 
 }
 
@@ -353,15 +337,51 @@ form {
     /* background-color: rgb(106, 106, 194); */
     width: 85%;
 }
+.ind{
+    position: relative;
+}
+.indicator{
+    position: absolute;
+    top: 30%;
+    right: 1%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(240, 235, 235);
+}
+.indicator.valid{
+    background: #0f0;
+    box-shadow: 0 0 5px #0f0,
+                0 0 10px #0f0,
+                0 0 20px #0f0,
+                0 0 40px #0f0;
 
-form .contact-btn {
+}
+.indicator.invalid{
+    background: #f00;
+    box-shadow: 0 0 5px #f00,
+                0 0 10px #f00,
+                0 0 20px #f00,
+                0 0 40px #f00;
+
+}
+
+form .btn {
     margin: 10px;
-    padding: 1rem 2rem;
+    padding: .8rem 1.5rem;
     border-radius: 10px;
     background-color: #444;
     text-align: center;
     color: white;
     width: fit-content;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+}
+form .btn:hover{
+    background-color: rgb(36, 150, 55);
+    transition: 0.3s;
+    
 }
 
 form .contact-btn a {
@@ -389,14 +409,18 @@ footer {
 
 }
 
-footer .social {
-    text-align: center;
-
+.mySocial{
+    letter-spacing: 8px;
+    margin: 8px auto;
 }
-.social .mySocial{
-    color: white;
-    letter-spacing: 5px;
-    margin-bottom: 4px;
+.mySocial a i{
+    color: white; 
+}
+.mySocial a i:visited,
+.mySocial a i:hover{
+    color: rgb(0, 140, 255);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 footer .social h3 {
@@ -409,6 +433,12 @@ footer .social span {
     padding: 2rem;
     color: rgb(170, 162, 162);
 }
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!Media query!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
+
 
 @media screen and (max-width:800px) {
     header nav ul {
@@ -441,19 +471,60 @@ footer .social span {
     }
 }
 
-@media screen and (max-width:554px){
+@media screen and (max-width:665px){
+    
+    .site-head h1 {
+        font-size: 2.3rem;
+        padding: 0.1rem 2rem;
+    }
+    
+    .site-head h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .site-head a {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+    }
+    .site-head a:hover{
+        background-color: rgb(17, 100, 31);
+        color: white;
+    }
+    #about .main-about img{
+        height: 150px;
+    }
+}
+
+
+@media screen and (max-width:555px){
 
     nav .logo img {
         height: 40px;
     }
 
     #about .main-about img {
-        height: 140px;
+        height: 130px;
         margin-bottom: 18px;
-        margin-left: 40%;
+        margin-top: -0.5%;
+        margin-left: 70%;
        
     
     }
+    .main-about h4 {
+        margin: 1rem auto;
+        line-height: 1.2;
+    }
+    
+    .main-about .myprofile h3 {
+        font-size: 1.6rem;
+       padding-top: 8%;
+    }
+    .myprofile h4 a{
+        color: rgb(43, 153, 135);
+    } 
+    
+  
 
     #Portfolio{
         padding: 6% 0;
@@ -481,7 +552,7 @@ footer .social span {
         margin-right: 10px;
     }
 
-    form .contact-btn {
+    form .btn {
         margin-right: 18px;
         padding: .7rem 1rem;
         width: 100px;
@@ -529,9 +600,77 @@ footer .social span {
     .main-about .myprofile h4 {
         font-size: 1.2rem;
     }
+    form .btn {
+        padding: .7rem 1.2rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    form .btn:hover{
+        background-color: rgb(36, 150, 55);
+        transition: 0.3s;
+        
+    }   
+}
 
-
+@media screen and (max-width:495px){
+      
+    .site-head h1 {
+        font-size: 2.1rem;
+    }
     
+    .site-head h3 {
+        font-size: 1.1rem;
+    }
+    
+    .site-head a {
+        font-size: 1rem;
+        padding: .7rem 1.5rem;
+
+    }
+    .site-head a:hover{
+        background-color: rgb(17, 100, 31);
+        color: white;
+    }
+
+
+
+    #contact_us {
+        padding: 1rem;
+    }
+    
+    #contact_us .mytext {
+        padding: 1.8rem;
+    }
+    
+    .mytext h1 {
+        font-size: 1.3rem;
+    }
+    
+    .mytext h3 {
+        font-size: 1rem;
+        padding-top: 1.7rem;
+    }
+    
+    form {
+        padding: 1rem 1rem;
+        width: 100%;
+        margin-left: -20%;
+    }
+
+    form .btn {
+        padding: .6rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    form .btn:hover{
+        background-color: rgb(36, 150, 55);
+        transition: 0.3s;
+        
+    }
+    footer .social span {
+        font-size: .8rem;
+        padding: 1rem;
+    }
 }
 
 
@@ -546,7 +685,9 @@ footer .social span {
         font-size: 1.3rem;
     }
     .main-about .myprofile h3 {
-        font-size: 1.6rem;
+    
+        font-size: 1.3rem;
+        padding-top: 30%;
     }
     .main-about .myprofile h4 {
         font-size: 1rem;
@@ -555,6 +696,27 @@ footer .social span {
         height: 100px;
         
     
+    }
+
+
+    .site-head h1 {
+        font-size: 2rem;
+    }
+    
+    .site-head h3 {
+        font-size: 1rem;
+    }
+    
+    .site-head a {
+        font-size: .9rem;
+
+    }
+    .site-head a:hover{
+        background-color: rgb(17, 100, 31);
+        color: white;
+    }
+    footer .social span {
+        font-size: .7rem;
     }
 }
 

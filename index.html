@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <div id="error"></div>
     <header>
         <nav>
             <div class="logo">
@@ -123,22 +124,30 @@
                 <h1>We’re happy to hear from you</h1>
                 <h3>Have a conversation with us to day and see how we can help you?</h3>
             </div>
-            <form method="post" action="#" class="contact-form">
+            <form method="post" id="form" class="contact-form">
                 <div class="text-area">
-                    <div class="name">
-                        <input type="text" name="name" id="name" placeholder="Your name" required>
+                    <div class="name ind">
+
+
+                        <input type="text" name="name" id="name" placeholder="Your name"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])$+" title="Name must be at least 3 chracter" maxlength="25"
+                            minlength="3" required>
+                        <span class="indicator" id="nameValid"></span>
                     </div>
-                    <div class="email">
+                    <div class="email ind">
                         <input type="email" name="email" id="email" placeholder="Your email" required>
+                        <span class="indicator" id="emailValid"></span>
 
                     </div>
 
                     <div class="your-message">
-                        <textarea name="message" placeholder="Your message" rows="4"></textarea>
+                        <textarea name="message" placeholder="Your message" minlength="5" maxlength="1000" rows="4"
+                            required></textarea>
 
                     </div>
                     <div class="contact-btn">
-                        <a href="#" class="btn">Submit</a>
+                        <button type="submit" class="btn">Submit</button>
+                        <!-- <a href="#" class="btn">Submit</a> -->
                     </div>
 
                 </div>
@@ -150,13 +159,7 @@
 
 
 
-
-
-
         <!--!!!!!!!!!!!!!!! footer section !!!!!!!!!!!!!!!!!!!!-->
-
-
-
 
 
 
@@ -164,11 +167,11 @@
             <div class="social">
                 <h3>You can find as at</h3>
                 <div class="mySocial">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-envelope-o"></i>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#" ><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/AbdulAdeodatus" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-envelope-o"></i></a>
                 </div>
                 <span>&copy;<em>2021 created by Adeodatus</em></span>
             </div>
@@ -176,13 +179,6 @@
 
     </main>
 
-    <!-- <section class="main">
-            <div class="myself">
-                <img src="./img/" alt="">
-
-            </div>
-
-        </section>     -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -193,6 +189,8 @@
             })
         })
     </script>
+
+    <script defer src="script.js"></script>
 
 </body>
 

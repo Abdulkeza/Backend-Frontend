@@ -341,9 +341,14 @@ footer .social h3, h5{
     letter-spacing: 10px;
     margin: 8px auto;
 }
-.social .mySocial i{
-    color: white;
-   
+.social .mySocial a i{
+    color: white; 
+}
+.social .mySocial a i:visited,
+.social .mySocial a i:hover{
+    color: rgb(0, 140, 255);
+    cursor: pointer;
+    transition: 0.3s;
 }
 footer .social span{
     font-size: .9rem;
@@ -402,6 +407,20 @@ footer .social span{
 /* !!!!!!!!!!!!!!!!!!Media Query for Main story!!!!!!!!!!!!!!!!!!!!! */
 
 
+@media screen and (max-width:1006px){
+    .title{
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       padding: 0.8% 20%;
+    }
+    
+    .title h1{
+       font-size: 1.8rem;
+    }
+}
 @media screen and (max-width:976px) and (max-width:500px) {
 
     .story img{
@@ -443,38 +462,6 @@ footer .social span{
     }
     
 }
-@media screen and (max-width:1006px){
-    .title{
-       display: flex;
-       flex-wrap: wrap;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       padding: 0.8% 20%;
-    }
-    
-    .title h1{
-       font-size: 1.8rem;
-    }
-}
-@media screen and (max-width:559px){
-    
-    .title h1{
-       font-size: 1.2rem;
-    }
-}
-@media screen and (max-width:373px){
-    
-    .title h1{
-       font-size: 1rem;
-    }
-}
-@media screen and (max-width:310px){
-    
-    .title h1{
-       font-size: .9rem;
-    }
-}
 
 @media screen and (max-width:784px) {
     #latest .story img{
@@ -498,8 +485,23 @@ footer .social span{
         padding-right:8.5%;
         padding-left: 8.5%;
     }
+    .left-logo h3{
+        font-size: .9rem;
+    }
     
 }
+
+@media screen and (max-width:559px){
+    
+    .title h1{
+       font-size: 1.2rem;
+    }
+    .left-logo h3{
+        font-size: .7rem;
+    }
+    
+}
+
 @media screen and (max-width:534px) {
    
     #latest h3{
@@ -515,6 +517,13 @@ footer .social span{
     #latest h4:hover{
         color: rgb(0, 102, 236);
     } 
+
+    footer .social h5{
+        font-size: .7rem;   
+    }
+    footer .social span{
+        font-size: .8rem;
+    }
 }
 @media screen and (max-width:479px) {
     #latest .story img{
@@ -525,6 +534,38 @@ footer .social span{
         
         padding: 6px 12px;
         font-size: .8rem;
+    }
+    .left-logo h3{
+        font-size: .6rem;
+    }
+    footer .social span{
+        font-size: .7rem;
+    }
+    footer .social h3{
+        font-size: .95rem;   
+    }
+    footer .social h5{
+        font-size: .6rem;   
+    }
+}
+
+@media screen and (max-width:384px){
+    
+    .title h1{
+       font-size: 1rem;
+    }
+    .left-logo h3{
+        font-size: .5rem;
+    }
+
+    footer .social span{
+        font-size: .6rem;
+    }
+    footer .social h3{
+        font-size: .8rem;   
+    }
+    footer .social h5{
+        font-size: .5rem;   
     }
 }
 @media screen and (max-width:350px) {
@@ -547,4 +588,13 @@ footer .social span{
         width: 7rem;
     }  
 }
+
+@media screen and (max-width:310px){
+    
+    .title h1{
+       font-size: .9rem;
+    }
+}
+
+
 
