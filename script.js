@@ -1,5 +1,3 @@
-// const name = document.getElementById("name")
-
 
 
 function validate(){
@@ -16,11 +14,9 @@ function validate(){
         if (name.value.match(namePattern)) {
             nameIndicator.classList.add('valid');
             nameIndicator.classList.remove('invalid');
-            console.log('Valid')
         } else {
             nameIndicator.classList.add('invalid');
             nameIndicator.classList.remove('valid');
-            console.log("Invalid")
         }
         if(name.value == ""){
             nameIndicator.classList.remove('invalid');
@@ -28,14 +24,6 @@ function validate(){
         }
     })
 
-    // var passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,8}$/;
-    // name.addEventListener('keyup', ()=>{
-    //     if (name.value.match(passwordPattern)) {
-    //         console.log('Valid')
-    //     } else {
-    //         console.log("Invalid")
-    //     }
-    // })
 
 
 email.addEventListener('keyup', ()=> {

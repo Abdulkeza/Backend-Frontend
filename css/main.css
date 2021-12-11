@@ -56,7 +56,6 @@ header nav {
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
-    /* flex-direction: row; */
     padding: 0 3rem;
 }
 
@@ -334,7 +333,6 @@ main .site-head {
 
 form {
     padding: 1rem 2rem;
-    /* background-color: rgb(106, 106, 194); */
     width: 85%;
 }
 .ind{
@@ -342,10 +340,10 @@ form {
 }
 .indicator{
     position: absolute;
-    top: 30%;
+    top: 40%;
     right: 1%;
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background: rgb(240, 235, 235);
 }
@@ -469,6 +467,22 @@ footer .social span {
         margin-bottom: 3rem;
 
     }
+    form {
+        padding: 1rem 1rem;
+        width: 100%;
+        margin-left: -20%;
+    }
+
+    form .btn {
+        padding: .6rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    form .btn:hover{
+        background-color: rgb(36, 150, 55);
+        transition: 0.3s;
+        
+    }
 }
 
 @media screen and (max-width:665px){
@@ -493,6 +507,23 @@ footer .social span {
     }
     #about .main-about img{
         height: 150px;
+    }
+
+    form {
+        padding: 1rem 1rem;
+        width: 100%;
+        margin-left: -20%;
+    }
+
+    form .btn {
+        padding: .6rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    form .btn:hover{
+        background-color: rgb(36, 150, 55);
+        transition: 0.3s;
+        
     }
 }
 
@@ -610,9 +641,14 @@ footer .social span {
         transition: 0.3s;
         
     }   
+
+    form input, textarea {
+        padding: .3rem .6rem;
+        font-size: .5rem;
+    }
 }
 
-@media screen and (max-width:495px){
+@media screen and (max-width:520px){
       
     .site-head h1 {
         font-size: 2.1rem;
@@ -667,14 +703,19 @@ footer .social span {
         transition: 0.3s;
         
     }
+    form input, textarea {
+        padding: .5rem .5rem;
+        font-size: .5rem;
+    }
     footer .social span {
         font-size: .8rem;
         padding: 1rem;
     }
+    
 }
 
 
-@media screen and (max-width:390px){
+@media screen and (max-width:400px){
     nav .logo img {
         height: 25px;
     }
@@ -717,6 +758,10 @@ footer .social span {
     }
     footer .social span {
         font-size: .7rem;
+    }
+    form input, textarea {
+        padding: .3rem .4rem;
+        font-size: .4rem;
     }
 }
 

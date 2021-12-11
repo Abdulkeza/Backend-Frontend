@@ -52,14 +52,71 @@ form input{
     border: 1px solid gray;
     border-radius: 6px;
     outline: none;
+    background-color: rgb(245, 245, 245);
 }
-input[type="button"]{
-    height: 35px;
+
+
+button{
+    width: 100%;
+    padding: 7px;
+    border-radius: 6px;
     margin-top: 20px;
     border: none;
     background-color: #49c1a2;
     color: white;
     font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.ind{
+    position: relative;
+}
+
+.indicator{
+    position: absolute;
+    top: 40%;
+    right: 2%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(214, 210, 210);
+}
+
+#signup-form .Sindicator{
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+#signup-form .Sindicator.valid{
+    
+    background-image: url(../img/valid.png);
+    background-size: cover;
+   
+}
+#signup-form .Sindicator.invalid{
+    background-image: url(../img/invalid.png);
+    background-size: cover;
+}
+
+.indicator.valid{
+    background: #0f0;
+    box-shadow: 0 0 5px #0f0,
+                0 0 10px #0f0,
+                0 0 20px #0f0,
+                0 0 40px #0f0;
+
+}
+.indicator.invalid{
+    background: #f00;
+    box-shadow: 0 0 5px #f00,
+                0 0 10px #f00,
+                0 0 20px #f00,
+                0 0 40px #f00;
+
 }
 p{
     text-align: center;
@@ -80,7 +137,6 @@ p{
     margin-top: -20px;
     font-size: 1rem;
 }
-
 
 /* !!!!!!!!!!!!!!!!!!Media Query for sign-up!!!!!!!!!!!!!!!!!!!!! */
 
