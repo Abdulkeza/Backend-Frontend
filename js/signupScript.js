@@ -103,8 +103,7 @@ function validate() {
       password1.value === password2.value
     ) {
       console.log("u entered valid input");
-    }else{
-      
+    } else {
       console.log("you entered invalid input");
       e.preventDefault();
     }
@@ -180,5 +179,4 @@ document.getElementById("signup-form").addEventListener("submit", (e) => {
   password = document.getElementById("password1").value;
   email = document.getElementById("email").value;
   signupRegister(name, password, email);
-
 });
