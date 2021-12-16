@@ -14,17 +14,12 @@
         <h1>sign up</h1>
         <h4>It's free and only takes a minute</h4>
 
-        <form id="signup-form"> 
-            <label for="Name">First Name</label>
+        <form id="signup-form">
+            <label for="Name">Username</label>
             <div class="ind">
-                <input type="text" id="name" placeholder="First Name" minlength="3" maxlength="30" title="Name should be at least 3 letters" required>
+                <input type="text" id="name" placeholder="First Name & Last Name" minlength="3" maxlength="30"
+                    title="Name should be at least 3 letters" required>
                 <span class="Sindicator" id="nameValid"></span>
-            </div>
-
-            <label for="Name">Last Name</label>
-            <div class="ind">
-                <input type="text" id="Lname" placeholder="Last Name" minlength="3">
-                <span class="Sindicator" id="LnameValid"></span>
             </div>
 
             <label for="email">Email</label>
@@ -35,19 +30,21 @@
 
             <label for="password">Password</label>
             <div class="ind">
-                <input type="password" id="password1" placeholder="password" required>
+                <input type="password" id="password1" placeholder="password"
+                    title="Password should be at least 6 chracter. 1 uppercase, 1 lowercase and number" required>
                 <span class="Sindicator" id="password1Valid"></span>
             </div>
 
 
             <label for="password">confirm Password</label>
             <div class="ind">
-                <input type="password" id="password2" title="first password and second should match" placeholder="password" required>
+                <input type="password" id="password2" title="first password and second should match"
+                    placeholder="password" required>
                 <span class="Sindicator" id="password2Valid"></span>
             </div>
 
 
-            <button type="submit">Submit</button>
+            <button type="submit" id="submit">Submit</button>
 
         </form>
         <p>By clicking the sign up button, you agree to our <br>
@@ -57,7 +54,14 @@
     </div>
     <p class="para-2">Already have an account? <a href="login.html">Login here</a></p>
 
-    <script defer src="signupScript.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- <script defer src="./init-firebase.js"></script> -->
+
+    <script defer src="/js/signupScript.js"></script>
 
 </body>
 

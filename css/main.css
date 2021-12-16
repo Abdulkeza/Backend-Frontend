@@ -19,7 +19,6 @@ html, body {
     font-family: 'Robot', Arial, Helvetica, sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
-    /* text-rendering: optimizeLegibility; */
     overflow-x: hidden;
     margin: 0px;
     padding: 0px;
@@ -153,8 +152,8 @@ main .site-head {
 .site-head a {
     padding: .9rem 1.8rem;
     border-radius: 50px;
-    background-color: rgb(36, 150, 55);
-    color: rgb(13, 14, 26);
+    background-color: rgb(26, 126, 42);
+    color: #fff;
     font-weight: 300;
     margin-top: 2rem;
     font-size: 1.3rem;
@@ -215,10 +214,8 @@ main .site-head {
 }
 .over-hover{
     position: absolute;
-    top: 40%;
-    bottom: 40%;
-    left: 37%;
-    right: 40%;
+    top: 33%;
+    left: 33%;
     color: #fff;
     font-size: 3rem;
     visibility: hidden;
@@ -407,15 +404,15 @@ footer {
 
 }
 
-.mySocial{
+.social .mySocial{
     letter-spacing: 8px;
     margin: 8px auto;
 }
-.mySocial a i{
+.social .mySocial a i{
     color: white; 
 }
-.mySocial a i:visited,
-.mySocial a i:hover{
+.social .mySocial a i:visited,
+.social .mySocial a i:hover{
     color: rgb(0, 140, 255);
     cursor: pointer;
     transition: 0.3s;

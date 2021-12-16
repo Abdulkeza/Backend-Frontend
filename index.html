@@ -34,6 +34,7 @@
                 <li class="nav-item"><a href="#f">About</a></li>
                 <li class="nav-item"><a href="#f">Portfolio</a></li>
                 <li class="nav-item"><a href="#f">Contact</a></li>
+                <li class="nav-item logged-in"><a href="#p" class="user-name"></a></li>
             </ul>
 
         </nav>
@@ -189,7 +190,19 @@
         })
     </script>
 
-    <script defer src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script defer src="./init-firebase.js"></script>
+
+<script defer src="/js/script.js"></script>
+
 
 </body>
 

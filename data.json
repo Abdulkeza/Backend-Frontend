@@ -1,0 +1,18 @@
+{
+    "person1": [
+        {
+            "id": 1,
+            "name": "adeodatus",
+            "status": "Alive",
+            "age": 26
+
+        },
+        {
+            "id": 2,
+            "name": "Keza",
+            "status": "Alive",
+            "age": 30
+
+        }
+    ]
+}

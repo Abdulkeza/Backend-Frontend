@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #344a72;
+    background-color: #fff;
     font-family: 'Robot', sans-serif;
 }
 .signup_form{
@@ -15,6 +15,8 @@ body{
     border-radius: 3px;
     margin-top: 10px;
     padding-bottom: 10px;
+    border: .5px solid;
+    box-shadow: 5px 7px 5px 0 #c5c3c3;
 }
 .login-form{
     width: 30%;
@@ -22,6 +24,8 @@ body{
     margin: 40px auto;
     background-color: white;
     border-radius: 3px;
+    border: .5px solid;
+    box-shadow: 5px 7px 5px 0 #c5c3c3;
     
 
 }
