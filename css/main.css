@@ -46,7 +46,9 @@ header {
     width: 100%;
     height: 14vh;
     background-color: rgb(255, 255, 255);
+    /* background-color: rgb(66, 65, 65); */
     padding-top: 15px;
+    position: fixed;
 
 }
 
@@ -398,7 +400,7 @@ form input, textarea {
 
 footer {
     width: 100%;
-    background-color: #444;
+    background-color: rgb(66, 65, 65);
     padding: 1rem 2rem;
     text-align: center;
 
@@ -526,6 +528,13 @@ footer .social span {
 
 
 @media screen and (max-width:555px){
+ 
+    /* .nav-items .nav-item a{
+        color: white;
+    }
+    nav ul li{
+        background-color: rgb(66, 65, 65);
+    } */
 
     nav .logo img {
         height: 40px;

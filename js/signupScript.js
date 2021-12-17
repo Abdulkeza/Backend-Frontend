@@ -11,7 +11,7 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig);
 const db = app.database();
-//  console.log(app.name);
+
 console.log("initialization of firebase");
 
 function validate() {
@@ -22,13 +22,11 @@ function validate() {
   const password2 = document.getElementById("password2");
   const submit = document.querySelector("#submit");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-  });
-
   var nameIndicator = document.getElementById("nameValid");
   var LnameIndicator = document.getElementById("LnameValid");
   var namePattern = /^([a-zA-Z]+\s)*[a-zA-Z]+$/;
+
+  //validating name
 
   name.addEventListener("keyup", () => {
     if (name.value.match(namePattern)) {
@@ -43,6 +41,8 @@ function validate() {
       nameIndicator.classList.remove("valid");
     }
   });
+
+  //validating email
 
   const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   var emailIndicator = document.getElementById("emailValid");
@@ -60,6 +60,8 @@ function validate() {
       emailIndicator.classList.remove("valid");
     }
   });
+
+  //validating password
 
   const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
   var passwordIndicator = document.getElementById("password1Valid");
@@ -95,60 +97,31 @@ function validate() {
     }
   });
 
+  //disabling button
   submit.addEventListener("submit", (e) => {
     if (
-      name.value.match(namePattern) &&
-      email.value.match(emailPattern) &&
-      password1.value.match(passwordPattern) &&
-      password1.value === password2.value
+      !name.value.match(namePattern) ||
+      !email.value.match(emailPattern) ||
+      !password1.value.match(passwordPattern) ||
+      !password1.value === password2.value
     ) {
-      console.log("u entered valid input");
+      submit.setAttribute("disabled", "disabled");
     } else {
-      console.log("you entered invalid input");
+      submit.removeAttribute("disabled");
       e.preventDefault();
     }
   });
 }
 validate();
 
+// form.addEventListener("change", () => {
+//   // e.preventDefault();
+//   document.getElementById('submit').disabled = validate()
+
+// });
 //connecting to database
 
 //reading data from database to console
-
-const dbRef = db.ref();
-
-dbRef
-  .child("person1")
-  .get()
-  .then((snapshot) => {
-    if (snapshot.exists()) {
-      console.log(snapshot.val());
-    } else {
-      console.log("no value available");
-    }
-  })
-  .catch((error) => {
-    console.log(error),
-      setTimeout(() => {
-        getpersons();
-      }, 5000);
-  });
-
-const getpersons = () => {
-  dbRef
-    .child("person1")
-    .get()
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val());
-      } else {
-        console.log("no value available");
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
 
 function signupRegister(name, password, email) {
   firebase
