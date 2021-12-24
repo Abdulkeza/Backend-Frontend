@@ -58,6 +58,7 @@
     cursor: pointer;
     color: #fff;
     font-size: 1.4rem;
+    padding: .7rem 0;
 
 }
 .bottom-action #cancel{
@@ -68,4 +69,5 @@
     margin-right: 0.4%;
     color: #fff;
     font-size: 1.4rem;
+    padding: .7rem 0;
 }
