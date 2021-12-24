@@ -15,7 +15,6 @@ const db = app.database();
 console.log("initialization of firebase");
 
 function validate() {
-  
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const password1 = document.getElementById("password1");
@@ -98,25 +97,22 @@ function validate() {
   });
 
   //disabling button
- 
-    if (
-      !name.value.match(namePattern) ||
-      !email.value.match(emailPattern) ||
-      !password1.value.match(passwordPattern) ||
-      !password1.value === password2.value
-    ) {
-      submit.disabled =  true;
-    } else {
-      submit.disabled = false;
-   
-    }
- 
+
+  if (
+    !name.value.match(namePattern) ||
+    !email.value.match(emailPattern) ||
+    !password1.value.match(passwordPattern) ||
+    !password1.value === password2.value
+  ) {
+    submit.disabled = true;
+  } else {
+    submit.disabled = false;
+  }
 }
 
 const form = document.getElementById("signup-form");
 form.addEventListener("change", () => {
- validate()
-
+  validate();
 });
 
 //reading data from database to console
@@ -132,10 +128,15 @@ function signupRegister(name, password, email) {
         displayName: name,
       });
       console.log("Profie updated");
-      alert("your acount has been created. you will be redirected in 5s");
+
+      swal({
+        title: "your acount has been created!",
+        icon: "success",
+      });
+
       setTimeout(() => {
         window.location.pathname = "/blog.html";
-      }, 5000);
+      }, 4000);
     })
 
     .catch((error) => {
