@@ -29,11 +29,11 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-items ">
-                <li class="nav-item"><a href="#f">Home</a></li>
+                <li class="nav-item"><a href="#home">Home</a></li>
                 <li class="nav-item"><a href="blog.html" target="_blank">Blog</a></li>
-                <li class="nav-item"><a href="#f">About</a></li>
-                <li class="nav-item"><a href="#f">Portfolio</a></li>
-                <li class="nav-item"><a href="#f">Contact</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#Portfolio">Portfolio</a></li>
+                <li class="nav-item"><a href="#contact_us">Contact</a></li>
                 <li class="nav-item logged-in"><a href="#p" class="user-name"></a></li>
             </ul>
 
@@ -41,11 +41,11 @@
 
     </header>
     <main>
-        <div class="site-head">
+        <div class="site-head" id="home">
             <h1>Hello, I am <strong>Adeodatus</strong>. <br>A full-stack web developer and Data scientist</h1>
             <h3><em>If you’re a business seeking a web presence or
                     are looking to hire, We are here to give you the best.</em></h3>
-            <a href="#" class="btn">View my work</a>
+            <a href="#Portfolio" class="btn">View my work</a>
 
         </div>
 
@@ -132,8 +132,7 @@
                     <div class="name ind">
 
                         <input type="text" name="name" id="name" placeholder="Your name"
-                            pattern="^(?=.*[a-z])(?=.*[A-Z])$+" title="Name must be at least 3 chracter" maxlength="25"
-                            minlength="3" required>
+                            title="Name must be at least 3 chracter" maxlength="25" minlength="3" required>
                         <span class="indicator" id="nameValid"></span>
                     </div>
                     <div class="email ind">
@@ -143,8 +142,8 @@
                     </div>
 
                     <div class="your-message">
-                        <textarea name="message" placeholder="Your message" minlength="5" maxlength="1000" rows="4"
-                            required></textarea>
+                        <textarea name="message" id="message" placeholder="Your message" minlength="5" maxlength="1000"
+                            rows="4" required></textarea>
 
                     </div>
                     <div class="contact-btn">
@@ -202,6 +201,8 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
     <script defer src="./init-firebase.js"></script>
+
+    <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script defer src="/js/script.js"></script>
 

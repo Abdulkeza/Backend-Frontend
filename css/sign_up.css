@@ -60,17 +60,25 @@ form input{
 }
 
 
-button{
+button {
     width: 100%;
     padding: 7px;
     border-radius: 6px;
     margin-top: 20px;
     border: none;
-    background-color: #49c1a2;
+    background-color: rgb(214, 13, 13);
     color: white;
     font-size: 1.2rem;
-    cursor: pointer;
-}
+    cursor: not-allowed;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+  }
+  button:enabled{
+      background-color: #49c1a2;
+      cursor: pointer;
+  }
 
 .ind{
     position: relative;

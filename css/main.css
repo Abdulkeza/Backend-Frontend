@@ -22,6 +22,7 @@ html, body {
     overflow-x: hidden;
     margin: 0px;
     padding: 0px;
+    scroll-behavior: smooth;
 
 }
 
@@ -173,7 +174,7 @@ main .site-head {
 
 
 #Portfolio{
-    background-color: rgb(241, 235, 235);
+    background-color: rgb(247, 244, 244);
     width: 100%;
     padding: 7% 0;
     margin-top: 140px;

@@ -9,7 +9,9 @@
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <link rel="stylesheet" href="css/mainblog.css">
+
 
 </head>
 
@@ -23,9 +25,10 @@
         </div>
 
         <div class="btn logged-in" id="in-button">
-            <a href="index.html">home</a>
-            <a href="#">Profile</a>
+
+            <a href="dashbord.html">Dashbord</a>
             <a href="blog.html" id="log-out">Logout</a>
+            <a href="#" class="profile"><span><img src="/img/profile.jpg" alt="Profile"> </span></a>
         </div>
 
         <div class="title">
@@ -38,15 +41,9 @@
 
             <ul class="nav-items ">
                 <li class="nav-item"><a href="#f">Home</a></li>
-                <li class="nav-item"><a href="#f">Politics</a></li>
                 <li class="nav-item"><a href="#f">Technology</a></li>
-                <li class="nav-item"><a href="#f">Entertainment</a></li>
-                <li class="nav-item"><a href="#f">News</a></li>
-                <li class="nav-item"><a href="#f">Fashion</a></li>
-                <li class="nav-item"><a href="#f">Health</a></li>
                 <li class="nav-item"><a href="#f">Science</a></li>
                 <li class="nav-item"><a href="#f">Innovation</a></li>
-                <li class="nav-item"><a href="#f">Travel</a></li>
                 <li class="nav-item logged-in"><a href="#p" class="user-name"></a></li>
             </ul>
 
@@ -55,6 +52,17 @@
     </header>
 
 
+    <section id="blog1">
+        <div class="blog-header">
+            <h3>Articles</h3>
+        </div>
+        <div class="articles">
+
+        </div>
+    </section>
+
+
+    <!-- 
     <section id="blog">
 
         <div class="main-story">
@@ -100,9 +108,9 @@
                     </div>
                 </a>
 
-            </div>
+            </div> -->
 
-            <div class="story">
+    <!-- <div class="story">
                 <div>
                     <img src="./img/moon.jpg" alt="Moon">
                 </div>
@@ -145,63 +153,16 @@
                     </div>
                 </a>
 
-            </div>
+            </div> 
 
-            <div class="story">
-                <div>
-                    <img src="./img/moon.jpg" alt="Moon">
-                </div>
-                <a href="https://www.theguardian.com/science/2019/jul/10/one-giant-lie-why-so-many-people-still-think-the-moon-landings-were-faked"
-                    target="_blank">
-                    <div class="story1">
-                        <h3>The moon landing was fake</h3>
-                        <h4>It was a rumor going to the moon</h4>
-                        <h5>July 30, 2022</h5>
-                    </div>
-                </a>
+    </div>
 
-            </div>
-
-            <div class="story">
-                <div>
-                    <img src="./img/moon.jpg" alt="Moon">
-                </div>
-                <a href="https://www.theguardian.com/science/2019/jul/10/one-giant-lie-why-so-many-people-still-think-the-moon-landings-were-faked"
-                    target="_blank">
-                    <div class="story1">
-                        <h3>The moon landing was fake</h3>
-                        <h4>It was a rumor going to the moon</h4>
-                        <h5>July 30, 2022</h5>
-                    </div>
-                </a>
-
-            </div>
-
-            <div class="story">
-                <div>
-                    <img src="./img/moon.jpg" alt="Moon">
-                </div>
-                <a href="https://www.theguardian.com/science/2019/jul/10/one-giant-lie-why-so-many-people-still-think-the-moon-landings-were-faked"
-                    target="_blank">
-                    <div class="story1">
-                        <h3>The moon landing was fake</h3>
-                        <h4>It was a rumor going to the moon</h4>
-                        <h5>July 30, 2022</h5>
-                    </div>
-                </a>
-
-            </div>
-
-
-
-        </div>
-
-    </section>
+    </section> -->
 
     <!-- !!!!!!!!!!!!!!!!Latest news !!!!!!!!!!!!!!!!!!!!!-->
 
 
-    <section id="latest">
+    <!-- <section id="latest">
         <div class="lat">
             <h2>Latest</h2>
         </div>
@@ -240,7 +201,7 @@
 
         </div>
 
-    </section>
+    </section>   latest -->
 
 
 
@@ -286,6 +247,7 @@
     <script defer src="./init-firebase.js"></script>
 
     <script defer src="/js/blog.js"></script>
+    <!-- <script defer src="/js/script.js"></script> -->
 
 </body>
 

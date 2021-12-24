@@ -15,7 +15,7 @@ const db = app.database();
 console.log("initialization of firebase");
 
 function validate() {
-  const form = document.getElementById("signup-form");
+  
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const password1 = document.getElementById("password1");
@@ -98,28 +98,26 @@ function validate() {
   });
 
   //disabling button
-  submit.addEventListener("submit", (e) => {
+ 
     if (
       !name.value.match(namePattern) ||
       !email.value.match(emailPattern) ||
       !password1.value.match(passwordPattern) ||
       !password1.value === password2.value
     ) {
-      submit.setAttribute("disabled", "disabled");
+      submit.disabled =  true;
     } else {
-      submit.removeAttribute("disabled");
-      e.preventDefault();
+      submit.disabled = false;
+   
     }
-  });
+ 
 }
-validate();
 
-// form.addEventListener("change", () => {
-//   // e.preventDefault();
-//   document.getElementById('submit').disabled = validate()
+const form = document.getElementById("signup-form");
+form.addEventListener("change", () => {
+ validate()
 
-// });
-//connecting to database
+});
 
 //reading data from database to console
 

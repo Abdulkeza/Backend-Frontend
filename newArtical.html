@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/artical.css">
+</head>
+<body>
+    <div class="container"> 
+        <form action="">
+            <img src="/img/eagle_img.jpeg" alt="">
+            <input type="file" placeholder="Image" name="file" id="imgFile">
+            <input type="text" placeholder="Title" name="title" id="title">
+            <input type="text" placeholder="Author" name="author" id="author">
+            <textarea name="text"  cols="30" rows="25" id="text"></textarea>
+            <div id="text" name="text">
+                <div id="toolbar"></div>
+                <div id="editor"></div>
+            </div>
+            <div class="bottom-action">
+                <button id="cancel">Cancel</button>
+                <button id="save" type="submit">Save</button>
+                
+            </div>
+        </form>
+    </div>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script defer src="./init-firebase.js"></script>
+    <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script defer src="/js/dashbord.js"></script>
+</body>
+

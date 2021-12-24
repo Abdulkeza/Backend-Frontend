@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800&display=swap');* 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Robot', Arial, Helvetica, sans-serif;
+    color: rgba(131, 2, 2, 0.863)
+  }
+  header{
+    background-color: #fff;
+    border-bottom: 1PX solid rgb(238, 231, 231);
+    padding: .8rem ;
+    position: relative;
+    margin-top: 0;
+  }
+  header img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 5%;
+    top: 25%;
+  }
+  
+  .main-dash {
+    min-height: 80vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  #action {
+    width: 90%;
+    text-align: center;
+  }
+  
+  #action caption {
+    background-color: #2a6086;
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1.5rem;
+  }
+  
+  #action thead {
+    background-color: rgba(158, 89, 39, 0.096);
+    
+  }
+  
+  #action thead td {
+    padding: 0.8rem;
+    color: #000;
+  }
+  
+  #action tbody td {
+    padding: 0.8rem;
+    border-bottom: 1px solid rgb(85, 82, 82);
+    color: rgb(32, 31, 31);
+  }
+  
+  #action tbody td button, .add-article {
+    padding: 0.3rem 0.5rem;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.863);
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #action tbody td button.edit {
+    background-color: #2a6086
+  }
+  
+  #action tbody td button.remove {
+    background-color: rgb(180, 33, 7);
+  }
+  
+  #add-article {
+    background-color: #2a6086;
+    margin-top: 1.6rem;
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  
+  
+  

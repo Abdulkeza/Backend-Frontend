@@ -7,6 +7,7 @@ const firebaseConfig = {
   storageBucket: "eagle-app-1b978.appspot.com",
   messagingSenderId: "456708535525",
   appId: "1:456708535525:web:53178c8f141c412b97500c",
+  databaseURL: "https://eagle-app-1b978-default-rtdb.europe-west1.firebasedatabase.app/"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
