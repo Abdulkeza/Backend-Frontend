@@ -8,7 +8,7 @@ const firebaseConfig = {
   databaseURL:
     "https://eagle-app-1b978-default-rtdb.europe-west1.firebasedatabase.app",
 };
-
+import { showNotification } from "../init-firebase.js";
 const app = firebase.initializeApp(firebaseConfig);
 const db = app.database();
 
@@ -127,12 +127,10 @@ function signupRegister(name, password, email) {
       user.updateProfile({
         displayName: name,
       });
+      showNotification(
+        `Dear <b class="text-primary">${name}</b>, Your account has been created.`
+      );
       console.log("Profie updated");
-
-      swal({
-        title: "your acount has been created!",
-        icon: "success",
-      });
 
       setTimeout(() => {
         window.location.pathname = "/blog.html";
@@ -141,6 +139,7 @@ function signupRegister(name, password, email) {
 
     .catch((error) => {
       console.log(error);
+      showNotification(error.message, (type = "error"));
     });
 }
 

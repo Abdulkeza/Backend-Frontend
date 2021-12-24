@@ -1,3 +1,5 @@
+import { showNotification } from "../init-firebase.js";
+
 function validate() {
   const form = document.getElementById("form");
   const email = document.getElementById("email");
@@ -46,7 +48,7 @@ validate();
 const form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  e.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
@@ -54,14 +56,19 @@ form.addEventListener("submit", (e) => {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      console.log(userCredential.user);
+      let user = userCredential.user;
+      showNotification(
+        `Welcome <b>${user.displayName}. You are being redirected`,
+        (type = undefined),
+        (duration = 2000)
+      );
 
       setTimeout(() => {
         window.location.pathname = "/blog.html";
-      }, 500);
+      }, 2500);
     })
     .catch((error) => {
       console.log(error);
-      alert(error.message);
+      showNotification(`<b>${error.message}</b>`, (type = "error"));
     });
 });

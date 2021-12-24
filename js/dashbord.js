@@ -21,8 +21,21 @@ var savePost = (title, author, text) => {
     author: author,
     text: text,
   });
-  swal("Artical added", "success");
-  console.log("new Artical added");
+  //swal("Artical added", "success"); // This part can not work. please see the function I created about shpwing notification
+  // to learn more about using SweetAlerts.
+
+  // As a example see the proper implementation here
+
+  Swal.fire({
+    text: "Article added",
+    icone: "success",
+  });
+  console.log("new Artical added"); // No need to log the notification after setting up visual one
+
+  /*
+  Use the above implementation or the function to define a proper notification
+  
+  */
   //   ($(".post-table").innerHTML = ""), listPosts();
 };
 
@@ -94,12 +107,20 @@ try {
 
           setTimeout(() => {
             window.location.pathname = "/edit.html";
-          }, 2000);
+          }, 300); //use small time
+
+          // A user should receive an instant effect after clicking a button
+          // That is why you should not use the timeout function or reduce the
+          // time to an untociable time to simulate page loading
         });
     } else if (target.matches(".remove")) {
+      //Explain this concept of using the getAttribute
       let articleId = e.target.getAttribute("data-key");
       //above line, we are assigning ID of individual Article to articleId
       console.log("ArticleID ", articleId);
+
+      // Please modify this call
+      //You were in the right way to calling the function even provided the options correctly
 
       swal({
         title: "Are you sure you want to delete this Article?",
@@ -108,8 +129,12 @@ try {
         buttons: true,
         dangerMode: true,
       }).then((willDelete) => {
+        //To use the promise callback, please refer to this.
+        // https://sweetalert2.github.io/#:~:text=A%20confirm%20dialog%2C%20with%20a%20function%20attached%20to%20the%20%22Confirm%22%2Dbutton
         if (willDelete) {
           postRef.child(articleId).remove();
+
+          //change this call also
           swal("Article deleted!", {
             icon: "success",
           });
@@ -119,7 +144,9 @@ try {
       // console.log("Article Removed susseccfully!!!!1");
     }
   });
-} catch (error) {}
+} catch (error) {
+  //use a function to nitify a user
+}
 
 //Editting Article Section
 
@@ -129,6 +156,7 @@ if (window.location.pathname == "/edit.html") {
   let text = document.getElementById("text");
 
   let articleId = localStorage.getItem("activeEdit");
+  // What happens when there is no ID stored in Localstorage
 
   postRef
     .child(articleId)
@@ -156,13 +184,16 @@ if (window.location.pathname == "/edit.html") {
     swal("Successfully updated.");
     setTimeout(() => {
       window.location.pathname = "/dashbord.html";
-    }, 4000);
+    }, 4000); // 4 seconds is a long time to wait for process
+    // At least keep it at 2 and show a loader.
+    //Look through fontawesome library
   });
 
   const cancel = document.getElementById("cancel");
   cancel.addEventListener("click", () => {
     console.log("cancel clicked");
     localStorage.removeItem("activeEdit", articleId);
+    //This one is great
 
     setTimeout(() => {
       window.location.pathname = "/dashbord.html";
@@ -171,7 +202,17 @@ if (window.location.pathname == "/edit.html") {
 }
 
 var updatePost = (articleId, data) => {
+  /** We take two parameter:
+   *      articleID: to find the article being editted
+   *      data: collected from the submitted form*/
+
   //Above line, allow us to update title and text according to an ArticleID
-  postRef.child(articleId).update(data);
+  postRef.child(articleId).update(data); //Use new added data to update the article
+
+  // To-Do
+  //Check if a given field was edited or not.
+  //It is not efficient to update all fields, even when they were not changed.
+  //Look for field properties which allow us to know if a given field has changed.
   console.log("Post Updated");
+  // Notify a user
 };
