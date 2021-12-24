@@ -1,4 +1,5 @@
-function validate() {
+// Change functions to ES6 structure
+const validate = () => {
   const form = document.getElementById("form");
   const name = document.getElementById("name");
   const email = document.getElementById("email");
@@ -7,12 +8,12 @@ function validate() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
   });
-  var emailIndicator = document.getElementById("emailValid");
+  let emailIndicator = document.getElementById("emailValid");
 
-  var nameIndicator = document.getElementById("nameValid");
+  let nameIndicator = document.getElementById("nameValid");
 
   try {
-    var namePattern =
+    let namePattern =
       /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{1,})?)/;
 
     name.addEventListener("keyup", () => {
@@ -47,7 +48,7 @@ function validate() {
       emailIndicator.classList.remove("valid");
     }
   });
-}
+};
 
 validate();
 

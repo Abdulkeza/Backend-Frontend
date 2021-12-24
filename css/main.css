@@ -26,6 +26,14 @@ html, body {
 
 }
 
+.text-primary {
+    font-family: var(--heading-font);
+    color: blue;
+}
+
+b {
+    font-weight: bolder;
+}
 
 main {
     overflow: hidden;
@@ -64,7 +72,7 @@ header nav {
 nav .logo {
     object-fit: scale-down;
     height: 100%;
-   
+
 
 }
 
@@ -76,7 +84,7 @@ nav .logo img {
 nav ul {
     display: flex;
     padding-right: 2rem;
-    
+
 }
 
 nav ul li {
@@ -87,13 +95,14 @@ nav ul li {
     /* background-color: #444; */
 
 }
-.nav-items .nav-item a{
+
+.nav-items .nav-item a {
     color: rgb(17, 16, 16);
     font-size: .9rem;
 }
 
 .nav-items .nav-item a:link,
-.nav-items .nav-item a:visited{
+.nav-items .nav-item a:visited {
     text-decoration: none;
     text-transform: uppercase;
     border-bottom: 2px solid transparent;
@@ -101,7 +110,7 @@ nav ul li {
     transition: border-bottom 0.2s;
 }
 
-.nav-items .nav-item a:hover{
+.nav-items .nav-item a:hover {
     border-bottom: 2px solid rgb(36, 150, 55);
     transition: 0.2s;
 }
@@ -112,7 +121,7 @@ nav .menu-toggle {
     right: 0%;
     padding: .5rem 1rem;
     font-size: 1.2rem;
-    
+
 }
 
 .mobile {
@@ -162,7 +171,8 @@ main .site-head {
     font-size: 1.3rem;
     text-transform: uppercase;
 }
-.site-head a:hover{
+
+.site-head a:hover {
     background-color: rgb(17, 100, 31);
     color: white;
     transition: 0.4s;
@@ -173,17 +183,19 @@ main .site-head {
 /* !!!!!!!!!!!!!!!!!!PORTFOLIO PART!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 
-#Portfolio{
+#Portfolio {
     background-color: rgb(247, 244, 244);
     width: 100%;
     padding: 7% 0;
     margin-top: 140px;
 
 }
-.big-text h1{
+
+.big-text h1 {
     text-align: center;
 
 }
+
 .big-text h1::after {
     display: block;
     height: 1.5px;
@@ -192,30 +204,34 @@ main .site-head {
     width: 100px;
     margin: 0 auto;
     margin-top: 15px;
-    
+
 }
-#Portfolio .cards{
+
+#Portfolio .cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding: 10% 0 10% 0;
 
 }
-.cards .card img{
+
+.cards .card img {
     width: 480;
     height: 200px;
     margin-right: 10px;
     opacity: 0.8;
 }
 
-.cards .card:hover{
+.cards .card:hover {
     background-color: rgb(41, 37, 37);
     transition: 0.5s;
 }
-.cards .card{
+
+.cards .card {
     position: relative;
 }
-.over-hover{
+
+.over-hover {
     position: absolute;
     top: 33%;
     left: 33%;
@@ -225,18 +241,20 @@ main .site-head {
     opacity: 0.5;
 
 }
-.over-hover a{
+
+.over-hover a {
     color: #fff;
     background-color: rgb(17, 100, 31);
     font-size: 2rem;
     padding: 3px 15px;
     border-radius: 8px;
 }
-.cards .card:hover .over-hover{
+
+.cards .card:hover .over-hover {
     visibility: visible;
     opacity: 1;
     transition: 0.4s;
-    
+
 }
 
 
@@ -288,9 +306,10 @@ main .site-head {
     font-weight: bolder;
     color: rgb(26, 29, 29);
 }
-.myprofile h4 a{
+
+.myprofile h4 a {
     color: rgb(43, 153, 135);
-} 
+}
 
 .myskills {
     text-align: left;
@@ -335,10 +354,12 @@ form {
     padding: 1rem 2rem;
     width: 85%;
 }
-.ind{
+
+.ind {
     position: relative;
 }
-.indicator{
+
+.indicator {
     position: absolute;
     top: 40%;
     right: 1%;
@@ -347,20 +368,22 @@ form {
     border-radius: 50%;
     background: rgb(240, 235, 235);
 }
-.indicator.valid{
+
+.indicator.valid {
     background: #0f0;
     box-shadow: 0 0 5px #0f0,
-                0 0 10px #0f0,
-                0 0 20px #0f0,
-                0 0 40px #0f0;
+        0 0 10px #0f0,
+        0 0 20px #0f0,
+        0 0 40px #0f0;
 
 }
-.indicator.invalid{
+
+.indicator.invalid {
     background: #f00;
     box-shadow: 0 0 5px #f00,
-                0 0 10px #f00,
-                0 0 20px #f00,
-                0 0 40px #f00;
+        0 0 10px #f00,
+        0 0 20px #f00,
+        0 0 40px #f00;
 
 }
 
@@ -376,10 +399,11 @@ form .btn {
     font-weight: 600;
     border: none;
 }
-form .btn:hover{
+
+form .btn:hover {
     background-color: rgb(36, 150, 55);
     transition: 0.3s;
-    
+
 }
 
 form .contact-btn a {
@@ -407,15 +431,17 @@ footer {
 
 }
 
-.social .mySocial{
+.social .mySocial {
     letter-spacing: 8px;
     margin: 8px auto;
 }
-.social .mySocial a i{
-    color: white; 
+
+.social .mySocial a i {
+    color: white;
 }
+
 .social .mySocial a i:visited,
-.social .mySocial a i:hover{
+.social .mySocial a i:hover {
     color: rgb(0, 140, 255);
     cursor: pointer;
     transition: 0.3s;
@@ -467,6 +493,7 @@ footer .social span {
         margin-bottom: 3rem;
 
     }
+
     form {
         padding: 1rem 1rem;
         width: 100%;
@@ -478,34 +505,37 @@ footer .social span {
         font-size: 1rem;
         font-weight: 500;
     }
-    form .btn:hover{
+
+    form .btn:hover {
         background-color: rgb(36, 150, 55);
         transition: 0.3s;
-        
+
     }
 }
 
-@media screen and (max-width:665px){
-    
+@media screen and (max-width:665px) {
+
     .site-head h1 {
         font-size: 2.3rem;
         padding: 0.1rem 2rem;
     }
-    
+
     .site-head h3 {
         font-size: 1.3rem;
         margin-bottom: 1.2rem;
     }
-    
+
     .site-head a {
         font-size: 1.1rem;
         text-transform: uppercase;
     }
-    .site-head a:hover{
+
+    .site-head a:hover {
         background-color: rgb(17, 100, 31);
         color: white;
     }
-    #about .main-about img{
+
+    #about .main-about img {
         height: 150px;
     }
 
@@ -520,16 +550,17 @@ footer .social span {
         font-size: 1rem;
         font-weight: 500;
     }
-    form .btn:hover{
+
+    form .btn:hover {
         background-color: rgb(36, 150, 55);
         transition: 0.3s;
-        
+
     }
 }
 
 
-@media screen and (max-width:555px){
- 
+@media screen and (max-width:555px) {
+
     /* .nav-items .nav-item a{
         color: white;
     }
@@ -546,39 +577,43 @@ footer .social span {
         margin-bottom: 18px;
         margin-top: -0.5%;
         margin-left: 70%;
-       
-    
+
+
     }
+
     .main-about h4 {
         margin: 1rem auto;
         line-height: 1.2;
     }
-    
+
     .main-about .myprofile h3 {
         font-size: 1.6rem;
-       padding-top: 8%;
+        padding-top: 8%;
     }
-    .myprofile h4 a{
-        color: rgb(43, 153, 135);
-    } 
-    
-  
 
-    #Portfolio{
+    .myprofile h4 a {
+        color: rgb(43, 153, 135);
+    }
+
+
+
+    #Portfolio {
         padding: 6% 0;
         margin-top: 200px;
-    
-    }
-    .big-text h1{
-        font-size: 1.3rem;
-    
+
     }
 
-    #Portfolio .cards{
-        padding: 6% 0 6% 0;
-    
+    .big-text h1 {
+        font-size: 1.3rem;
+
     }
-    .cards .card img{
+
+    #Portfolio .cards {
+        padding: 6% 0 6% 0;
+
+    }
+
+    .cards .card img {
         width: 380;
         height: 150px;
         margin-right: 6px;
@@ -594,7 +629,7 @@ footer .social span {
         margin-right: 18px;
         padding: .7rem 1rem;
         width: 100px;
-       
+
     }
 
 
@@ -626,28 +661,33 @@ footer .social span {
     nav .logo {
         padding-left: 1rem;
     }
+
     .myskills {
         margin-top: 160px;
     }
+
     .main-about .myskills h3 {
         margin: 3px 0px;
         padding: 7px 15px;
 
-    
+
     }
+
     .main-about .myprofile h4 {
         font-size: 1.2rem;
     }
+
     form .btn {
         padding: .7rem 1.2rem;
         font-size: 1.1rem;
         font-weight: 500;
     }
-    form .btn:hover{
+
+    form .btn:hover {
         background-color: rgb(36, 150, 55);
         transition: 0.3s;
-        
-    }   
+
+    }
 
     form input, textarea {
         padding: .3rem .6rem;
@@ -655,22 +695,23 @@ footer .social span {
     }
 }
 
-@media screen and (max-width:520px){
-      
+@media screen and (max-width:520px) {
+
     .site-head h1 {
         font-size: 2.1rem;
     }
-    
+
     .site-head h3 {
         font-size: 1.1rem;
     }
-    
+
     .site-head a {
         font-size: 1rem;
         padding: .7rem 1.5rem;
 
     }
-    .site-head a:hover{
+
+    .site-head a:hover {
         background-color: rgb(17, 100, 31);
         color: white;
     }
@@ -680,20 +721,20 @@ footer .social span {
     #contact_us {
         padding: 1rem;
     }
-    
+
     #contact_us .mytext {
         padding: 1.8rem;
     }
-    
+
     .mytext h1 {
         font-size: 1.3rem;
     }
-    
+
     .mytext h3 {
         font-size: 1rem;
         padding-top: 1.7rem;
     }
-    
+
     form {
         padding: 1rem 1rem;
         width: 100%;
@@ -705,70 +746,80 @@ footer .social span {
         font-size: 1rem;
         font-weight: 500;
     }
-    form .btn:hover{
+
+    form .btn:hover {
         background-color: rgb(36, 150, 55);
         transition: 0.3s;
-        
+
     }
+
     form input, textarea {
         padding: .5rem .5rem;
         font-size: .5rem;
     }
+
     footer .social span {
         font-size: .8rem;
         padding: 1rem;
     }
-    
+
 }
 
 
-@media screen and (max-width:400px){
+@media screen and (max-width:400px) {
     nav .logo img {
         height: 25px;
     }
-    .myskills h2{
+
+    .myskills h2 {
         font-size: 1.4rem;
     }
-    .myskills h3{
+
+    .myskills h3 {
         font-size: 1.3rem;
     }
+
     .main-about .myprofile h3 {
-    
+
         font-size: 1.3rem;
         padding-top: 30%;
     }
+
     .main-about .myprofile h4 {
         font-size: 1rem;
     }
+
     #about .main-about img {
         height: 100px;
-        
-    
+
+
     }
 
 
     .site-head h1 {
         font-size: 2rem;
     }
-    
+
     .site-head h3 {
         font-size: 1rem;
     }
-    
+
     .site-head a {
         font-size: .9rem;
 
     }
-    .site-head a:hover{
+
+    .site-head a:hover {
         background-color: rgb(17, 100, 31);
         color: white;
     }
+
     footer .social span {
         font-size: .7rem;
     }
+
     form input, textarea {
         padding: .3rem .4rem;
         font-size: .4rem;
     }
 }
-
