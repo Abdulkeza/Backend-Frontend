@@ -27,5 +27,3 @@ export const showNotification = (
     showConfirmButton: false,
   });
 };
-
-

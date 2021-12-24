@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up</title>
 
     <link rel="stylesheet" href="./css/sign_up.css">
 </head>
 
 <body>
     <div class="signup_form">
-        <h1>sign up</h1>
+        <h1 class="title text-primary">Sign Up</h1>
+        <hr>
         <h4>It's free and only takes a minute</h4>
 
         <form id="signup-form">
-            <label for="Name">Username</label>
+            <label for="Name">Full name</label>
             <div class="ind">
-                <input type="text" id="name" placeholder="First Name & Last Name" minlength="3" maxlength="30"
+                <input type="text" id="name" placeholder="First & Last Name" minlength="3" maxlength="30"
                     title="Name should be at least 3 letters" required>
                 <span class="Sindicator" id="nameValid"></span>
             </div>
 
-            <label for="email">Email</label>
+            <label for="email">E-mail</label>
             <div class="email ind">
-                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="email" name="email" id="email" placeholder="E-mail" required>
                 <span class="Sindicator" id="emailValid"></span>
             </div>
 
@@ -36,7 +37,7 @@
             </div>
 
 
-            <label for="password">confirm Password</label>
+            <label for="password">Confirm Password</label>
             <div class="ind">
                 <input type="password" id="password2" title="first password and second should match"
                     placeholder="password" required>
@@ -52,7 +53,7 @@
         </p>
 
     </div>
-    <p class="para-2">Already have an account? <a href="./login.html">Login here</a></p>
+    <p class="para-2">Already have an account? <a href="./login.html" class="login">Login here</a></p>
 
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
