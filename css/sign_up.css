@@ -1,24 +1,27 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #fff;
     font-family: 'Robot', sans-serif;
 }
-.signup_form{
+
+.signup_form {
     width: 30%;
     /* height: 550px; */
     margin: auto;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 10px;
     margin-top: 10px;
     padding-bottom: 10px;
     border: .5px solid;
     box-shadow: 5px 7px 5px 0 #c5c3c3;
 }
-.login-form{
+
+.login-form {
     width: 30%;
     height: 300px;
     margin: 40px auto;
@@ -26,30 +29,39 @@ body{
     border-radius: 3px;
     border: .5px solid;
     box-shadow: 5px 7px 5px 0 #c5c3c3;
-    
+
 
 }
 
-h1{
+h1 {
     text-align: center;
-    padding-top: 15px;
+    padding: 15px;
+    font-family: "Lato";
 }
-h4{
+
+h4 {
     text-align: center;
     font-size: .9rem;
     color: rgb(53, 48, 48);
     margin-top: 8px;
 }
-form{
+
+form {
     width: 70%;
     margin-left: 15%;
 }
-form label{
+
+form label {
     display: flex;
     margin-top: 16px;
     font-size: 18px;
+    padding: 0px 0px 10px 0px;
+    font-family: 'Lato';
+    font-weight: bolder;
+
 }
-form input{
+
+form input {
     width: 100%;
     padding: 7px;
     border: none;
@@ -59,6 +71,12 @@ form input{
     background-color: rgb(245, 245, 245);
 }
 
+form input::placeholder {
+    text-transform: capitalize;
+    font-family: "Lato";
+    color: rgb(18, 144, 175);
+    font-weight: bolder;
+}
 
 button {
     width: 100%;
@@ -70,21 +88,22 @@ button {
     color: white;
     font-size: 1.2rem;
     cursor: not-allowed;
-  }
-  
-  button:disabled {
-    cursor: not-allowed;
-  }
-  button:enabled{
-      background-color: #49c1a2;
-      cursor: pointer;
-  }
+}
 
-.ind{
+button:disabled {
+    cursor: not-allowed;
+}
+
+button:enabled {
+    background-color: #49c1a2;
+    cursor: pointer;
+}
+
+.ind {
     position: relative;
 }
 
-.indicator{
+.indicator {
     position: absolute;
     top: 40%;
     right: 2%;
@@ -94,7 +113,7 @@ button {
     background: rgb(214, 210, 210);
 }
 
-#signup-form .Sindicator{
+#signup-form .Sindicator {
     position: absolute;
     top: 25%;
     right: 2%;
@@ -103,86 +122,124 @@ button {
     border-radius: 50%;
 }
 
-#signup-form .Sindicator.valid{
-    
+#signup-form .Sindicator.valid {
+
     background-image: url(../img/valid.png);
     background-size: cover;
-   
+
 }
-#signup-form .Sindicator.invalid{
+
+#signup-form .Sindicator.invalid {
     background-image: url(../img/invalid.png);
     background-size: cover;
 }
 
-.indicator.valid{
+.indicator.valid {
     background: #0f0;
     box-shadow: 0 0 5px #0f0,
-                0 0 10px #0f0,
-                0 0 20px #0f0,
-                0 0 40px #0f0;
+        0 0 10px #0f0,
+        0 0 20px #0f0,
+        0 0 40px #0f0;
 
 }
-.indicator.invalid{
+
+.indicator.invalid {
     background: #f00;
     box-shadow: 0 0 5px #f00,
-                0 0 10px #f00,
-                0 0 20px #f00,
-                0 0 40px #f00;
+        0 0 10px #f00,
+        0 0 20px #f00,
+        0 0 40px #f00;
 
 }
-p{
+
+p {
     text-align: center;
     padding-top: 20px;
     font-size: .9rem;
 }
-.para-2{
+
+.para-2 {
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: .9rem;
     margin-top: -10px;
-}
-.para-2 a{
-    color: #49c1a2;
+    font-family: 'Lato';
 }
 
-.log-para{
-    margin-top: -20px;
+.para-2 a {
+    color: #005374;
+}
+
+.log-para {
+    margin-top: 20px;
     font-size: 1rem;
+    color: black;
+}
+
+.signup_form p {
+    font-family: 'Lato';
+    padding: 5px;
+    margin: 10px;
+}
+
+.signup_form a {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.login {
+    text-decoration: none;
+    padding: 7px 20px;
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 30px;
+    font-weight: bolder;
+    text-transform: uppercase;
+
+}
+.login:hover {
+    background-color: rgba(204, 192, 192, 0.767);
+}
+
+body {
+    padding-bottom: 2rem;
 }
 
 /* !!!!!!!!!!!!!!!!!!Media Query for sign-up!!!!!!!!!!!!!!!!!!!!! */
 
 @media screen and (max-width:1100px) and (min-width: 700px) {
-    .signup_form{
+    .signup_form {
         width: 40%;
     }
-    
+
 }
 
 @media screen and (max-width:699px) and (min-width: 580px) {
-    .signup_form{
+    .signup_form {
         width: 50%;
     }
-    
+
 }
 
 @media screen and (max-width:579px) and (min-width: 400px) {
-    .signup_form{
+    .signup_form {
         width: 60%;
     }
-    
+
 }
+
 @media screen and (max-width:399px) and (min-width: 290px) {
-    .signup_form{
+    .signup_form {
         width: 75%;
     }
-    
+
 }
+
 @media screen and (max-width:289px) and (min-width: 200px) {
-    .signup_form{
+    .signup_form {
         width: 88%;
     }
-    
+
 }
 
 
@@ -190,34 +247,36 @@ p{
 
 
 @media screen and (max-width:1100px) and (min-width: 700px) {
-    .login-form{
+    .login-form {
         width: 40%;
     }
-    
+
 }
 
 @media screen and (max-width:699px) and (min-width: 580px) {
-    .login-form{
+    .login-form {
         width: 50%;
     }
-    
+
 }
 
 @media screen and (max-width:579px) and (min-width: 400px) {
-    .login-form{
+    .login-form {
         width: 60%;
     }
-    
+
 }
+
 @media screen and (max-width:399px) and (min-width: 290px) {
-    .login-form{
+    .login-form {
         width: 75%;
     }
-    
+
 }
+
 @media screen and (max-width:289px) and (min-width: 200px) {
-    .login-form{
+    .login-form {
         width: 88%;
     }
-    
+
 }

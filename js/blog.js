@@ -101,7 +101,7 @@ function displayArticle() {
       blogArticle.innerHTML += tr;
     }
 
-    console.log(blogArticle);
+    // console.log(blogArticle);
   });
 }
 
