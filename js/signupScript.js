@@ -109,7 +109,7 @@ function signupRegister(name, password, email) {
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       var user = userCredential.user;
-      console.log("User cccreated");
+      console.log("User created");
       user.updateProfile({
         displayName: name,
       });
