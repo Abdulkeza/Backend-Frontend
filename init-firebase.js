@@ -36,7 +36,7 @@ export const resolvePathname = (path) => {
   if (host.startsWith(local)) {
     return path;
   } else if (host.startsWith(gitHost)) {
-    let newPath = "/MyWebsite" + path;
+    let newPath = "/Mywebsite" + path;
     return newPath;
   } else {
     return path;
