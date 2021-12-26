@@ -1,3 +1,5 @@
+import { resolvePathname } from "../init-firebase";
+
 const auth = firebase.auth();
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -34,7 +36,7 @@ logout.addEventListener("click", (e) => {
     // console.log("user signed out");
 
     setTimeout(() => {
-      window.location.pathname = "/blog.html";
+      window.location.pathname = resolvePathname("/blog.html");
     }, 2000);
   });
 });

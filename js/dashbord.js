@@ -1,3 +1,5 @@
+import { resolvePathname } from "../init-firebase.js";
+
 const form = document.querySelector("form");
 const tbody = document.querySelector(".post-table");
 const edit = document.querySelectorAll(".edit");
@@ -5,11 +7,7 @@ const remove = document.querySelectorAll(".remove");
 const addNew = document.getElementById("add-article");
 const save = document.getElementById("save");
 
-const dbRef = db.ref();
 var postRef = firebase.database().ref("posts/");
-
-// console.log(app.name);
-console.log("this is dashbord");
 
 // write data
 
@@ -39,13 +37,13 @@ var savePost = (title, author, text) => {
   //   ($(".post-table").innerHTML = ""), listPosts();
 };
 
-if (window.location.pathname == "/newArtical.html") {
+if (window.location.pathname == resolvePathname("/newArtical.html")) {
   try {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       savePost(form.title.value, form.author.value, form.text.value);
       setTimeout(() => {
-        window.location.pathname = "/dashbord.html";
+        window.location.pathname = resolvePathname("/dashbord.html");
       }, 3000);
     });
   } catch (error) {}
@@ -106,7 +104,7 @@ try {
           //above function help
 
           setTimeout(() => {
-            window.location.pathname = "/edit.html";
+            window.location.pathname = resolvePathname("/edit.html");
           }, 300); //use small time
 
           // A user should receive an instant effect after clicking a button
@@ -150,7 +148,7 @@ try {
 
 //Editting Article Section
 
-if (window.location.pathname == "/edit.html") {
+if (window.location.pathname == resolvePathname("/edit.html")) {
   let title = document.getElementById("title");
   let author = document.getElementById("author");
   let text = document.getElementById("text");
@@ -183,7 +181,7 @@ if (window.location.pathname == "/edit.html") {
 
     swal("Successfully updated.");
     setTimeout(() => {
-      window.location.pathname = "/dashbord.html";
+      window.location.pathname = resolvePathname("/dashbord.html");
     }, 4000); // 4 seconds is a long time to wait for process
     // At least keep it at 2 and show a loader.
     //Look through fontawesome library
@@ -196,7 +194,7 @@ if (window.location.pathname == "/edit.html") {
     //This one is great
 
     setTimeout(() => {
-      window.location.pathname = "/dashbord.html";
+      window.location.pathname = resolvePathname("/dashbord.html");
     }, 2000);
   });
 }

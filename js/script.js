@@ -1,3 +1,5 @@
+import { resolvePathname } from "../init-firebase.js";
+
 // Change functions to ES6 structure
 const validate = () => {
   const form = document.getElementById("form");
@@ -77,7 +79,7 @@ try {
     swal("Successfully submitted", "See you soon!", "success");
 
     setTimeout(() => {
-      window.location.href = "index.html";
+      window.location.pathname = resolvePathname("index.html");
     }, 5000);
   });
 } catch (error) {}
