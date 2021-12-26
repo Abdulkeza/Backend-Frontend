@@ -1,4 +1,4 @@
-import { showNotification } from "../init-firebase.js";
+import { resolvePathname, showNotification } from "../init-firebase.js";
 
 function validate() {
   const form = document.getElementById("form");
@@ -59,16 +59,16 @@ form.addEventListener("submit", (e) => {
       let user = userCredential.user;
       showNotification(
         `Welcome <b>${user.displayName}. You are being redirected`,
-        (type = undefined),
-        (duration = 2000)
+        undefined,
+        5000
       );
 
       setTimeout(() => {
-        window.location.pathname = "/blog.html";
+        window.location.pathname = resolvePathname("/blog.html");
       }, 2500);
     })
     .catch((error) => {
       console.log(error);
-      showNotification(`<b>${error.message}</b>`, (type = "error"));
+      showNotification(`<b>${error.message}</b>`, "error");
     });
 });

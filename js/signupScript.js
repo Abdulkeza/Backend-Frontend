@@ -1,4 +1,4 @@
-import { showNotification } from "../init-firebase.js";
+import { resolvePathname, showNotification } from "../init-firebase.js";
 
 function validate() {
   const name = document.getElementById("name");
@@ -119,13 +119,13 @@ function signupRegister(name, password, email) {
       console.log("Profie updated");
 
       setTimeout(() => {
-        window.location.pathname = "/blog.html";
+        window.location.pathname = resolvePathname("/blog.html");
       }, 4000);
     })
 
     .catch((error) => {
       console.log(error);
-      showNotification(error.message, (type = "error"));
+      showNotification(error.message, "error");
     });
 }
 
