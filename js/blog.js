@@ -1,4 +1,4 @@
-import { resolvePathname } from "../init-firebase";
+import { resolvePathname } from "../init-firebase.js";
 
 const auth = firebase.auth();
 

@@ -431,33 +431,35 @@ footer {
 
 }
 
-.social .mySocial {
-    letter-spacing: 8px;
-    margin: 8px auto;
+
+
+
+
+
+.social-group {
+    padding: 10px 20px;
 }
 
-.social .mySocial a i {
+.social-group a {
     color: white;
+    padding: 5px;
+    transition: .3s all;
 }
 
-.social .mySocial a i:visited,
-.social .mySocial a i:hover {
+.social-group a:hover {
     color: rgb(0, 140, 255);
-    cursor: pointer;
-    transition: 0.3s;
+    transition: .3s all;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
-footer .social h3 {
-    padding: 1rem 0rem;
+.title {
     color: white;
 }
 
-footer .social span {
-    margin: 1rem;
-    padding: 2rem;
-    color: rgb(170, 162, 162);
+.credit {
+    color: gray;
 }
-
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!Media query!!!!!!!!!!!!!!!!!!!!!!!!! */
 
