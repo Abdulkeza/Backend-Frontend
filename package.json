@@ -16,5 +16,8 @@
     "url": "https://github.com/Abdulkeza/Mywebsite/issues"
   },
   "homepage": "https://github.com/Abdulkeza/Mywebsite#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "sweetalert2": "^11.3.0"
+  }
 }

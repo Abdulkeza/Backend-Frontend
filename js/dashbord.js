@@ -1,3 +1,4 @@
+// import Swal from "../sweetalert2";
 import { resolvePathname } from "../init-firebase.js";
 
 const form = document.querySelector("form");
@@ -8,6 +9,18 @@ const addNew = document.getElementById("add-article");
 const save = document.getElementById("save");
 
 var postRef = firebase.database().ref("posts/");
+// var imgref = firebase.storage().ref('Images/');
+
+// let file = {};
+
+// var chooseFile = (e) =>{
+//  file = e.target.files[0];
+//  var ext = file.name.split('.').pop();;
+//         console.log(postName);
+//         console.log(ext);
+// }
+
+// chooseFile();
 
 // write data
 
@@ -19,16 +32,22 @@ var savePost = (title, author, text) => {
     author: author,
     text: text,
   });
-  //swal("Artical added", "success"); // This part can not work. please see the function I created about shpwing notification
-  // to learn more about using SweetAlerts.
 
-  // As a example see the proper implementation here
+  // var newFile = firebase.storage().ref('Images/' + postName + "." + ext).put(file);
+
+  // newFile.set({
+  //   imgFile: imgFile,
+  // }).then(() =>{
+  //   console.log("image uploaded");
+  // }).catch( error =>{
+  //   console.log(error.message);
+  // })
 
   Swal.fire({
     text: "Article added",
     icone: "success",
   });
-  console.log("new Artical added"); // No need to log the notification after setting up visual one
+  // console.log("new Artical added");
 
   /*
   Use the above implementation or the function to define a proper notification
@@ -52,9 +71,7 @@ if (window.location.pathname == resolvePathname("/newArtical.html")) {
 //read section
 
 function read() {
-  //read function help us to read data from the firebase
   postRef.on("value", (snapshot) => {
-    //postRef.on help us to access the actual content in our firebase
     let articles = snapshot.val();
     try {
       tbody.innerHTML = "";
@@ -101,7 +118,7 @@ try {
         .then((snapshot) => {
           console.log(snapshot.val());
           localStorage.setItem("activeEdit", articleId);
-          //above function help
+          //above function help us to set the name of article and ID as activeEdit with articleId
 
           setTimeout(() => {
             window.location.pathname = resolvePathname("/edit.html");
@@ -112,13 +129,8 @@ try {
           // time to an untociable time to simulate page loading
         });
     } else if (target.matches(".remove")) {
-      //Explain this concept of using the getAttribute
       let articleId = e.target.getAttribute("data-key");
-      //above line, we are assigning ID of individual Article to articleId
       console.log("ArticleID ", articleId);
-
-      // Please modify this call
-      //You were in the right way to calling the function even provided the options correctly
 
       swal({
         title: "Are you sure you want to delete this Article?",
@@ -138,13 +150,9 @@ try {
           });
         }
       });
-
-      // console.log("Article Removed susseccfully!!!!1");
     }
   });
-} catch (error) {
-  //use a function to nitify a user
-}
+} catch (error) {}
 
 //Editting Article Section
 
@@ -153,50 +161,57 @@ if (window.location.pathname == resolvePathname("/edit.html")) {
   let author = document.getElementById("author");
   let text = document.getElementById("text");
 
-  let articleId = localStorage.getItem("activeEdit");
-  // What happens when there is no ID stored in Localstorage
+  if (localStorage !== null) {
+    let articleId = localStorage.getItem("activeEdit");
+    // What happens when there is no ID stored in Localstorage
 
-  postRef
-    .child(articleId)
-    //Accessing individual element of post
-    .get()
-    .then((snapshot) => {
-      title.value = snapshot.val().title;
-      author.value = snapshot.val().author;
-      text.value = snapshot.val().text;
+    postRef
+      .child(articleId)
+      //Accessing individual element of post
+      .get()
+      .then((snapshot) => {
+        title.value = snapshot.val().title;
+        author.value = snapshot.val().author;
+        text.value = snapshot.val().text;
+      });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      title = title.value;
+      author = author.value;
+      text = text.value;
+
+      let data = {
+        title: title,
+        text: text,
+      };
+      updatePost(articleId, data);
+      //Calling updatePost function for updating post
+
+      console.log("no Article available");
+      setTimeout(() => {
+        window.location.pathname = resolvePathname("/dashbord.html");
+      }, 2000); // 4 seconds is a long time to wait for process
+      // At least keep it at 2 and show a loader.
+      //Look through fontawesome library
     });
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    title = title.value;
-    author = author.value;
-    text = text.value;
+    const cancel = document.getElementById("cancel");
+    cancel.addEventListener("click", () => {
+      console.log("cancel clicked");
+      localStorage.removeItem("activeEdit", articleId);
+      //This one is great
 
-    let data = {
-      title: title,
-      text: text,
-    };
-    updatePost(articleId, data);
-    //Calling updatePost function for updating post
-
-    swal("Successfully updated.");
+      setTimeout(() => {
+        window.location.pathname = resolvePathname("/dashbord.html");
+      }, 2000);
+    });
+  } else {
+    console.log("No Article available");
     setTimeout(() => {
-      window.location.pathname = resolvePathname("/dashbord.html");
-    }, 4000); // 4 seconds is a long time to wait for process
-    // At least keep it at 2 and show a loader.
-    //Look through fontawesome library
-  });
-
-  const cancel = document.getElementById("cancel");
-  cancel.addEventListener("click", () => {
-    console.log("cancel clicked");
-    localStorage.removeItem("activeEdit", articleId);
-    //This one is great
-
-    setTimeout(() => {
-      window.location.pathname = resolvePathname("/dashbord.html");
+      window.location.pathname = resolvePathname("/blog.html");
     }, 2000);
-  });
+  }
 }
 
 var updatePost = (articleId, data) => {
@@ -204,13 +219,15 @@ var updatePost = (articleId, data) => {
    *      articleID: to find the article being editted
    *      data: collected from the submitted form*/
 
-  //Above line, allow us to update title and text according to an ArticleID
   postRef.child(articleId).update(data); //Use new added data to update the article
 
   // To-Do
   //Check if a given field was edited or not.
   //It is not efficient to update all fields, even when they were not changed.
   //Look for field properties which allow us to know if a given field has changed.
-  console.log("Post Updated");
+  Swal.fire({
+    text: "Article Updated",
+    icone: "success",
+  });
   // Notify a user
 };
