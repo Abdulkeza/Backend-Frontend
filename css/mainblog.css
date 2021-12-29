@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
     color: white;
     font-family: 'Robot', Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -15,63 +17,73 @@ html,body{
     /* height: auto; */
     background-color: rgb(238, 229, 229);
 }
-.clearfix {zoom: 1;}
-.clearfix::after{
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix::after {
     content: '.';
     clear: both;
     display: block;
     height: 0;
     visibility: hidden;
 }
-h1{
+
+h1 {
     margin: 0;
     font-size: 200%;
     font-weight: 600;
     color: rgb(223, 211, 211);
 }
-header{
+
+header {
     /* background-color: deeppink; */
     width: 100%;
 }
-.btn{
+
+.btn {
     /* background-color: chocolate; */
     text-align: right;
     margin: 2% 5%;
 }
-.btn a{
+
+.btn a {
     text-decoration: none;
     background-color: #567b95;
     color: #fff;
     padding: 8px 15px;
     border-radius: 5px;
 }
+
 .btn a:visited,
-.btn a:hover{
+.btn a:hover {
     background-color: #2a6086;
     transition: 0.6s;
 }
 
 
 
-.title{
+.title {
     /* background-color: darkorange; */
     width: 100%;
     padding: 1% 37% 1% 20%;
 }
 
-.title img{
+.title img {
     height: 60px;
     width: 60px;
     border-radius: 50%;
 }
 
-.title h1{
+.title h1 {
     display: flex;
     float: right;
     color: rgb(58, 54, 54);
     text-transform: uppercase;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 /* .title h1::after{
     display: block;
     height: 2px;
@@ -82,14 +94,14 @@ header{
     margin-top: 30px;
     
 } */
-.btn  .profile {
+/* .btn .profile {
     border-radius: 50%;
     background-color: royalblue;
     position: relative;
     margin-left: 5%;
 }
 
-.profile img{
+.profile img {
 
     height: 100%;
     width: 100%;
@@ -99,17 +111,18 @@ header{
     top: 0;
     right: 0;
     left: 0;
-}
+} */
 
-li{
+li {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
 
 }
-header nav{
+
+header nav {
     /* background-color: forestgreen; */
     display: flex;
     /* justify-content: space-between; */
@@ -124,7 +137,7 @@ nav ul {
     display: flex;
     margin: auto;
     flex-wrap: wrap;
-    
+
 }
 
 /* !!!underline!!!!! */
@@ -139,10 +152,10 @@ nav ul {
      bottom: 0;
      left: 0;
    } */
-   
-   nav ul {
-   position: relative;  
-   }
+
+nav ul {
+    position: relative;
+}
 
 nav ul li {
     padding: .5rem 1.2rem;
@@ -152,13 +165,14 @@ nav ul li {
     /* background-color: #444; */
 
 }
-.nav-items .nav-item a{
+
+.nav-items .nav-item a {
     color: rgb(17, 16, 16);
     font-size: .8rem;
 }
 
 .nav-items .nav-item a:link,
-.nav-items .nav-item a:visited{
+.nav-items .nav-item a:visited {
     text-decoration: none;
     /* text-transform: uppercase; */
     border-bottom: 2px solid transparent;
@@ -167,9 +181,22 @@ nav ul li {
 }
 
 .nav-items .nav-item a:visited,
-.nav-items .nav-item a:hover{
+.nav-items .nav-item a:hover {
     border-bottom: 2px solid #2a6086;
     transition: 0.3s;
+
+}
+
+.btn #legged-user {
+    color: #2a6086;
+    width: 18%;
+    background: none !important;
+    text-align: center;
+    margin-left: 40%;
+    font-size: .8em;
+    padding: 5px !important;
+    
+
 
 }
 
@@ -190,13 +217,19 @@ nav ul li {
 .articles {
     /* background-color: chocolate; */
     padding: .2rem 1.5rem;
-    
 
 
 }
 
+.article {
+    margin-bottom: 50px;
+    box-shadow: 2px 3px 4px #b1b0b0;
+    /* padding-bottom: 2rem; */
+    padding: 0 2rem 2rem 2rem;
+}
+
 .articles h4 {
-    color: rgb(139, 15, 40);
+    color: #2a6086;
     font-size: .9rem;
     margin-top: 20px;
 }
@@ -205,6 +238,11 @@ nav ul li {
     margin-bottom: 30px;
     margin-top: 20PX;
 
+}
+
+.articles .btn {
+    color: #2a6086;
+    margin-left: 50%;
 }
 
 .blog-header h3 {
@@ -235,8 +273,8 @@ textarea {
     color: black;
     font-weight: bold;
     outline: none;
-    
-    
+
+
 }
 
 form .btn {
@@ -250,12 +288,12 @@ form .btn {
     font-size: 1rem;
     font-weight: 600;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
 
- .main-story{
+.main-story {
     width: 100%;
     height: auto;
     display: flex;
@@ -263,14 +301,14 @@ form .btn {
     flex-wrap: wrap;
     margin-top: 40px;
     /* background-color: darkorange; */
- 
+
 }
 
-.main-story a{
+.main-story a {
     text-decoration: none;
 }
 
-.story{
+.story {
     width: 25.3%;
     height: auto;
     margin: 10px;
@@ -278,42 +316,48 @@ form .btn {
     box-shadow: 0 1px 4px 1px rgb(219, 214, 214);
 
 }
-.story1{
+
+.story1 {
     margin-top: 10px;
     color: rgb(41, 39, 39);
 }
-.story1 h3{
+
+.story1 h3 {
     margin-bottom: 10px;
     font-size: .9rem;
 }
-.story1 h4{
+
+.story1 h4 {
     margin-bottom: 7px;
     font-size: .8rem;
 }
-.story1 h5{
+
+.story1 h5 {
     font-size: .7rem;
     color: rgb(68, 64, 64);
 }
 
 
-#blog h3:hover{
+#blog h3:hover {
     color: rgb(0, 102, 236);
 }
-#blog h4:hover{
+
+#blog h4:hover {
     color: rgb(0, 102, 236);
 }
 
 
-.story img{
+.story img {
     width: 100%;
     height: 140px;
 }
-.story1 h4{
+
+.story1 h4 {
     color: rgb(44, 42, 42);
 }
 
 
-.main-story::after{
+.main-story::after {
     display: block;
     content: '';
     width: auto;
@@ -321,9 +365,10 @@ form .btn {
     background-color: rgb(31, 29, 29);
     position: absolute;
     bottom: 0;
-    
+
 }
-.main-story{
+
+.main-story {
     position: relative;
 }
 
@@ -333,25 +378,28 @@ form .btn {
 /* !!!!!!!!!!!!!latest news part !!!!!!!!!!!!!!!!*/
 
 
-#latest{
+#latest {
     /* background-color: yellow; */
     width: auto;
     margin: auto;
-    padding-right:10%;
+    padding-right: 10%;
     padding-left: 10%;
 }
-.lat{
+
+.lat {
     margin-top: 20px;
 }
-.lat h2{
+
+.lat h2 {
     color: rgb(3, 84, 190);
 }
-.main-latest{
+
+.main-latest {
     /* background-color: #26f4d3; */
     margin-top: 100px;
 }
 
-.main-latest .story{
+.main-latest .story {
     display: flex;
     width: 100%;
     height: auto;
@@ -360,24 +408,28 @@ form .btn {
     box-shadow: 0 1px 4px 1px rgb(219, 214, 214);
 
 
-    
+
 }
-#latest .story img{
+
+#latest .story img {
     width: 335px;
     height: 140px;
     margin-right: 20px;
 }
-#latest h3{
+
+#latest h3 {
     font-size: 1.2rem;
 }
-#latest h4{
+
+#latest h4 {
     font-size: .9rem;
 }
 
-#latest h3:hover{
+#latest h3:hover {
     color: rgb(0, 102, 236);
 }
-#latest h4:hover{
+
+#latest h4:hover {
     color: rgb(0, 102, 236);
 }
 
@@ -391,60 +443,69 @@ form .btn {
 
 
 
-footer{
+footer {
     width: 100%;
     height: auto;
     background-color: #131627;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+
 }
-.footer-content{
+
+.footer-content {
     width: 78%;
     margin: auto;
     padding: 30px 0;
     display: flex;
-    
-}.left-logo{
+
+}
+
+.left-logo {
     width: 25%;
 }
 
-.left-logo img{
+.left-logo img {
     width: 70PX;
     height: 50px;
     margin-left: 25%;
 }
-.left-logo h3{
+
+.left-logo h3 {
     margin-top: 15px;
 }
 
-footer .social{
+footer .social {
     text-align: center;
     margin-left: 15%;
 }
-footer .social h3{
+
+footer .social h3 {
     margin-bottom: 10px;
 }
-footer .social h3, h5{
+
+footer .social h3,
+h5 {
     color: rgb(223, 211, 211);
     text-align: left;
     line-height: 1.3rem;
-    
+
 }
-.social .mySocial{
+
+.social .mySocial {
     letter-spacing: 10px;
     margin: 8px auto;
 }
-.social .mySocial a i{
-    color: white; 
+
+.social .mySocial a i {
+    color: white;
 }
+
 .social .mySocial a i:visited,
-.social .mySocial a i:hover{
+.social .mySocial a i:hover {
     color: rgb(0, 140, 255);
     cursor: pointer;
     transition: 0.3s;
 }
-footer .social span{
+
+footer .social span {
     font-size: .9rem;
     color: rgb(165, 160, 160);
     margin-top: 15px;
@@ -456,32 +517,41 @@ footer .social span{
 /* !!!!!!!!!!!!!!!!!Subscribe form !!!!!!!!!!!!!!!!!!!!*/
 
 
-.blog-header .title{
+.blog-header .title {
     position: absolute;
     top: 40px;
 }
 
-.sub-box{
+.sub-box {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+
 }
-.form-box{
+
+.form-box {
     background-color: #ececec;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 10px 10px 15px #c7c4c4, -10px -10px 15px #fff;
 }
-.form-box input{
+
+.form-box input {
     font-size: 1.1rem;
     color: #000;
     padding: 15px 10px;
     border: none;
     outline: none;
     background: #ececec;
+    width: 70%;
 }
-.form-box button{
+
+.form-box button {
+    width: 30%;
     color: #fff;
     padding: 15px 20px;
     font-size: 1.2rem;
@@ -491,7 +561,8 @@ footer .social span{
     cursor: pointer;
     transition: .3s;
 }
-.form-box button:hover{
+
+.form-box button:hover {
     background: #2e54d3;
 }
 
@@ -502,249 +573,282 @@ footer .social span{
 /* !!!!!!!!!!!!!!!!!!Media Query for Main story!!!!!!!!!!!!!!!!!!!!! */
 
 
-@media screen and (max-width:1006px){
-    .title{
-       display: flex;
-       flex-wrap: wrap;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       padding: 0.8% 20%;
+@media screen and (max-width:1006px) {
+    .title {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8% 20%;
     }
-    
-    .title h1{
-       font-size: 1.8rem;
+
+    .title h1 {
+        font-size: 1.8rem;
     }
 }
+
 @media screen and (max-width:976px) and (max-width:500px) {
 
-    .story img{
+    .story img {
         height: 120px;
     }
 
-   
-    .story1 h3{
+
+    .story1 h3 {
         font-size: .8rem;
     }
-    .story1 h4{
+
+    .story1 h4 {
         font-size: .7rem;
     }
-    .story1 h5{
+
+    .story1 h5 {
         font-size: .6rem;
     }
-    
-    
-    #blog h3:hover{
+
+
+    #blog h3:hover {
         color: rgb(0, 102, 236);
     }
-    #blog h4:hover{
+
+    #blog h4:hover {
         color: rgb(0, 102, 236);
     }
 
 
-    #latest h3{
+    #latest h3 {
         font-size: 1.1rem;
     }
-    #latest h4{
+
+    #latest h4 {
         font-size: .8rem;
     }
-    
-    #latest h3:hover{
+
+    #latest h3:hover {
         color: rgb(0, 102, 236);
     }
-    #latest h4:hover{
+
+    #latest h4:hover {
         color: rgb(0, 102, 236);
     }
-    
+
 }
 
 @media screen and (max-width:784px) {
-    #latest .story img{
+    #latest .story img {
         width: auto;
     }
-    #latest h3{
+
+    #latest h3 {
         font-size: 1rem;
     }
-    #latest h4{
+
+    #latest h4 {
         font-size: .7rem;
     }
-    
-    #latest h3:hover{
-        color: rgb(0, 102, 236);
-    }
-    #latest h4:hover{
+
+    #latest h3:hover {
         color: rgb(0, 102, 236);
     }
 
-    #latest{
-        padding-right:8.5%;
+    #latest h4:hover {
+        color: rgb(0, 102, 236);
+    }
+
+    #latest {
+        padding-right: 8.5%;
         padding-left: 8.5%;
     }
-    .left-logo h3{
+
+    .left-logo h3 {
         font-size: .9rem;
     }
-    
+
 }
 
-@media screen and (max-width:559px){
-    
-    .title h1{
-       font-size: 1.2rem;
+@media screen and (max-width:559px) {
+
+    .title h1 {
+        font-size: 1.2rem;
     }
-    .left-logo h3{
+
+    .left-logo h3 {
         font-size: .7rem;
     }
-    
+
 }
 
 @media screen and (max-width:534px) {
-   
-    #latest h3{
+
+    #latest h3 {
         font-size: .8rem;
     }
-    #latest h4{
+
+    #latest h4 {
         font-size: .6rem;
     }
-    
-    #latest h3:hover{
-        color: rgb(0, 102, 236);
-    }
-    #latest h4:hover{
-        color: rgb(0, 102, 236);
-    } 
 
-    footer .social h5{
-        font-size: .7rem;   
+    #latest h3:hover {
+        color: rgb(0, 102, 236);
     }
-    footer .social span{
+
+    #latest h4:hover {
+        color: rgb(0, 102, 236);
+    }
+
+    footer .social h5 {
+        font-size: .7rem;
+    }
+
+    footer .social span {
         font-size: .8rem;
     }
 
 
-    .form-box input{
+    .form-box input {
         font-size: .9rem;
         padding: 13px 8px;
     }
-    .form-box button{
+
+    .form-box button {
         padding: 13px 18px;
         font-size: .9rem;
         cursor: pointer;
         transition: .3s;
     }
-    .form-box button:hover{
+
+    .form-box button:hover {
         background: #2e54d3;
     }
 }
+
 @media screen and (max-width:479px) {
-    #latest .story img{
+    #latest .story img {
         height: 170px;
         width: 8rem;
-    }  
-    .btn a{
-        
+    }
+
+    .btn a {
+
         padding: 6px 12px;
         font-size: .8rem;
     }
-    .left-logo h3{
+
+    .left-logo h3 {
         font-size: .6rem;
     }
-    footer .social span{
+
+    footer .social span {
         font-size: .7rem;
     }
-    footer .social h3{
-        font-size: .95rem;   
-    }
-    footer .social h5{
-        font-size: .6rem;   
+
+    footer .social h3 {
+        font-size: .95rem;
     }
 
-    .form-box input{
+    footer .social h5 {
+        font-size: .6rem;
+    }
+
+    .form-box input {
         font-size: .8rem;
         padding: 11px 6px;
     }
-    .form-box button{
+
+    .form-box button {
         padding: 11px 16px;
         font-size: .8rem;
         cursor: pointer;
         transition: .3s;
     }
-    .form-box button:hover{
+
+    .form-box button:hover {
         background: #2e54d3;
     }
 }
 
-@media screen and (max-width:384px){
-    
-    .title h1{
-       font-size: 1rem;
+@media screen and (max-width:384px) {
+
+    .title h1 {
+        font-size: 1rem;
     }
-    .left-logo h3{
+
+    .left-logo h3 {
         font-size: .5rem;
     }
 
-    footer .social span{
+    footer .social span {
         font-size: .6rem;
     }
-    footer .social h3{
-        font-size: .8rem;   
+
+    footer .social h3 {
+        font-size: .8rem;
     }
-    footer .social h5{
-        font-size: .5rem;   
-    }
-}
-@media screen and (max-width:350px) {
-    #latest h3{
-        font-size: .7rem;
-    }
-    #latest h4{
+
+    footer .social h5 {
         font-size: .5rem;
     }
-    
-    #latest h3:hover{
+}
+
+@media screen and (max-width:350px) {
+    #latest h3 {
+        font-size: .7rem;
+    }
+
+    #latest h4 {
+        font-size: .5rem;
+    }
+
+    #latest h3:hover {
         color: rgb(0, 102, 236);
     }
-    #latest h4:hover{
-        color: rgb(0, 102, 236);
-    } 
 
-    #latest .story img{
+    #latest h4:hover {
+        color: rgb(0, 102, 236);
+    }
+
+    #latest .story img {
         height: 170px;
         width: 7rem;
-    }  
-    .form-box input{
+    }
+
+    .form-box input {
         font-size: .7rem;
         padding: 10px 5px;
     }
-    .form-box button{
+
+    .form-box button {
         padding: 10px 15px;
         font-size: .7rem;
         cursor: pointer;
         transition: .3s;
     }
-    .form-box button:hover{
+
+    .form-box button:hover {
         background: #2e54d3;
     }
 }
 
-@media screen and (max-width:310px){
-    
-    .title h1{
-       font-size: .9rem;
+@media screen and (max-width:310px) {
+
+    .title h1 {
+        font-size: .9rem;
     }
-    .form-box input{
+
+    .form-box input {
         font-size: .6rem;
         padding: 8px 4px;
     }
-    .form-box button{
+
+    .form-box button {
         padding: 8px 14px;
         font-size: .6rem;
         cursor: pointer;
         transition: .3s;
     }
-    .form-box button:hover{
+
+    .form-box button:hover {
         background: #2e54d3;
     }
 }
-
-
-

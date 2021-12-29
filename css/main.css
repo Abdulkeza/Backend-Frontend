@@ -199,7 +199,7 @@ main .site-head {
 .big-text h1::after {
     display: block;
     height: 1.5px;
-    background-color: #e67e22;
+    background-color: rgb(36, 150, 55);
     content: " ";
     width: 100px;
     margin: 0 auto;

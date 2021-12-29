@@ -7,10 +7,10 @@
   
   body {
     font-family: 'Robot', Arial, Helvetica, sans-serif;
-    color: rgba(131, 2, 2, 0.863)
+    color: rgba(29, 26, 26, 0.863)
   }
   header{
-    background-color: #fff;
+    background-color: rgb(250, 245, 245);
     border-bottom: 1PX solid rgb(238, 231, 231);
     padding: .8rem ;
     position: relative;

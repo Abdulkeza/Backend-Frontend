@@ -59,7 +59,7 @@ function displayArticle() {
                     <p>${articles[article].text}</p>
                     <em> <h4>Written by ${articles[article].author}</h4> </em>
                 <div id="submit-comment"></div>
-                <a class="btn btn-read" href="#none" data-ref="${article}">READ MORE</a>
+                <a class="logged-in btn btn-read" href="subscribe.html" data-ref="${article}">SUBSCRIBE</a>
                 </div>
             </div>`;
 
@@ -71,3 +71,4 @@ function displayArticle() {
 }
 
 displayArticle();
+
