@@ -195,7 +195,7 @@ nav ul li {
     margin-left: 40%;
     font-size: .8em;
     padding: 5px !important;
-    
+
 
 
 }
@@ -217,7 +217,6 @@ nav ul li {
 .articles {
     /* background-color: chocolate; */
     padding: .2rem 1.5rem;
-
 
 }
 
@@ -665,6 +664,19 @@ footer .social span {
         font-size: .9rem;
     }
 
+
+    .articles {
+        padding: .2rem .7rem;
+
+    }
+
+    .article {
+        padding: 0 .8rem 2rem .8rem;
+    }
+
+
+
+
 }
 
 @media screen and (max-width:559px) {
@@ -721,6 +733,18 @@ footer .social span {
     .form-box button:hover {
         background: #2e54d3;
     }
+
+
+
+    .articles {
+        padding: .2rem .4rem;
+
+    }
+
+    .article {
+        padding: 0 .5rem 2rem .5rem;
+    }
+
 }
 
 @media screen and (max-width:479px) {
@@ -788,6 +812,15 @@ footer .social span {
 
     footer .social h5 {
         font-size: .5rem;
+    }
+
+    .articles {
+        padding: .2rem .1rem;
+
+    }
+
+    .article {
+        padding: 0 .2rem 2rem .2rem;
     }
 }
 
