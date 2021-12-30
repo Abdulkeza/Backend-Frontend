@@ -44,7 +44,6 @@ logout.addEventListener("click", (e) => {
 //Displaying blog post
 
 let blogArticle = document.querySelector(".articles");
-// let articleRef = db.ref('articles/')
 var postRef = firebase.database().ref("posts/");
 
 function displayArticle() {

@@ -76,10 +76,16 @@ try {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     saveQuestion(form.name.value, form.email.value, form.message.value);
-    swal("Successfully submitted", "See you soon!", "success");
+    
+    Swal.fire({
+      Text: "Successfully submitted",
+      icone: "success",
+    });
 
     setTimeout(() => {
       window.location.pathname = resolvePathname("index.html");
     }, 5000);
   });
 } catch (error) {}
+
+

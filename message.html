@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/message.css">
+    <link rel="stylesheet" href="./css/blog-dashboard.css">
+    <link rel="stylesheet" href="./css/mainblog.css">
+</head>
+
+
+<body>
+    <header>
+        <a class=" user-name logged-in" id="logged-user" href="#p"></a>
+        <a href="./index.html"> <img src="./img/logo3" alt="EAGLE"></a>
+
+        <div class="btn logged-in" id="in-button">
+            <a href="./blog.html">Home</a>
+            <a href="./blog.html" id="log-out">Logout</a>
+        </div>
+
+
+    </header>
+    <section class="container">
+        <div class="messageTitle">
+            <h3>comments and questions from the users</h3>
+        </div>
+        <div class="messages">
+
+        </div>
+
+    </section>
+
+    <footer>
+        <a href="./dashbord.html">
+            << Back to dashboard</a> </footer> <script defer
+                src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
+                </script>
+
+                <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+                <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+                <script defer src="./init-firebase.js" type="module"></script>
+
+                <script defer src="./js/message.js"></script>
+</body>
+
+</html>

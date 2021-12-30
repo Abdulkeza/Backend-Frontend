@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #f8f0f3;
     font-family: 'Robot', sans-serif;
 }
 
@@ -17,7 +17,7 @@ body {
     border-radius: 10px;
     margin-top: 10px;
     padding-bottom: 10px;
-    border: .5px solid;
+    border: 1px solid rgb(233, 227, 227);
     box-shadow: 5px 7px 5px 0 #c5c3c3;
 }
 
@@ -27,7 +27,7 @@ body {
     margin: 40px auto;
     background-color: white;
     border-radius: 3px;
-    border: .5px solid;
+    border: 1px solid rgb(233, 227, 227);
     box-shadow: 5px 7px 5px 0 #c5c3c3;
 
 
@@ -164,16 +164,19 @@ p {
     font-size: .9rem;
     margin-top: -10px;
     font-family: 'Lato';
+
 }
 
 .para-2 a {
     color: #005374;
+    border: none;
 }
 
 .log-para {
     margin-top: 20px;
     font-size: 1rem;
     color: black;
+
 }
 
 .signup_form p {
@@ -192,13 +195,18 @@ p {
     padding: 7px 20px;
     border: 1px solid grey;
     background-color: transparent;
-    border-radius: 30px;
     font-weight: bolder;
     text-transform: uppercase;
+    transition: .3s;
 
 }
-.login:hover {
-    background-color: rgba(204, 192, 192, 0.767);
+
+/* .login:hover {
+    background-color: #c1d3ce
+} */
+
+.back {
+    text-transform: lowercase;
 }
 
 body {
