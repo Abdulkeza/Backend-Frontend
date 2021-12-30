@@ -9,18 +9,6 @@ const addNew = document.getElementById("add-article");
 const save = document.getElementById("save");
 
 var postRef = firebase.database().ref("posts/");
-// var imgref = firebase.storage().ref('Images/');
-
-// let file = {};
-
-// var chooseFile = (e) =>{
-//  file = e.target.files[0];
-//  var ext = file.name.split('.').pop();;
-//         console.log(postName);
-//         console.log(ext);
-// }
-
-// chooseFile();
 
 // write data
 
@@ -32,16 +20,6 @@ var savePost = (title, author, text) => {
     author: author,
     text: text,
   });
-
-  // var newFile = firebase.storage().ref('Images/' + postName + "." + ext).put(file);
-
-  // newFile.set({
-  //   imgFile: imgFile,
-  // }).then(() =>{
-  //   console.log("image uploaded");
-  // }).catch( error =>{
-  //   console.log(error.message);
-  // })
 
   Swal.fire({
     text: "Article added",
@@ -219,7 +197,7 @@ var updatePost = (articleId, data) => {
    *      articleID: to find the article being editted
    *      data: collected from the submitted form*/
 
-  postRef.child(articleId).update(data); //Use new added data to update the article
+  postRef.child(articleId).update(data); 
 
   // To-Do
   //Check if a given field was edited or not.
@@ -231,3 +209,54 @@ var updatePost = (articleId, data) => {
   });
   // Notify a user
 };
+
+
+
+
+
+// var imagesRef = firebase.database().ref("Images");
+// var editForm = document.getElementById("#editForm").addEventListener("submit", submitForm);
+
+
+// //uploading file in storage
+// try {
+  
+
+
+// function uploadimage() {
+//   var type = getInputVal("types");
+//   var storage = firebase.storage();
+//   var file = document.getElementById("imgFile").files[0];
+//   var storageref = storage.ref();
+//   var thisref = storageref.child(type).child(file.name).put(file);
+//   thisref.on(
+//     "state_changed",
+//     function (snapshot) {},
+//     function (error) {},
+//     function () {
+
+//       console.log("image uploaded Successfully");
+//       // Uploaded completed successfully, now we can get the download URL
+//       thisref.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+//         //getting url of image
+//         document.getElementById("url ").value = downloadURL;
+//         alert("uploaded successfully");
+//         saveMessage(downloadURL);
+//       });
+//     }
+//   );
+//   // Get values
+//   var url = getInputVal("url");
+//   // Save message
+//   // saveMessage(url);
+// }
+// uploadimage() 
+// } catch (error) {
+  
+// }
+
+
+
+
+
+
