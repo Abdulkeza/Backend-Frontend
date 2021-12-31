@@ -13,7 +13,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     background-color: white;
     color: rgb(32, 30, 30);
     font-family: 'Robot', Arial, Helvetica, sans-serif;
@@ -107,12 +108,12 @@ nav ul li {
     text-transform: uppercase;
     border-bottom: 2px solid transparent;
     -webkit-transition: border-bottom 0.2s;
-    transition: border-bottom 0.2s;
+    transition: border-bottom 0.3s;
 }
 
 .nav-items .nav-item a:hover {
-    border-bottom: 2px solid rgb(36, 150, 55);
-    transition: 0.2s;
+    border-bottom: 2px solid #1e84ac;
+    transition: .3s;
 }
 
 nav .menu-toggle {
@@ -134,7 +135,6 @@ main .site-head {
     padding: 4rem 2rem;
     margin: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/background_img.jpeg);
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/contact-us-img.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -149,7 +149,7 @@ main .site-head {
 }
 
 .site-head h1 strong {
-    color: rgb(36, 150, 55);
+    color: #1f789b;
 }
 
 .site-head h3 {
@@ -163,19 +163,20 @@ main .site-head {
 
 .site-head a {
     padding: .9rem 1.8rem;
-    border-radius: 50px;
-    background-color: rgb(26, 126, 42);
-    color: #fff;
+    border-radius: 5px;
+    background-color: #1A5F7A;
+    color: rgb(248, 244, 244);
     font-weight: 300;
     margin-top: 2rem;
     font-size: 1.3rem;
     text-transform: uppercase;
+    transition: 0.4s;
 }
 
 .site-head a:hover {
-    background-color: rgb(17, 100, 31);
+    background-color: #0b3e52;
     color: white;
-    transition: 0.4s;
+
 }
 
 
@@ -184,7 +185,8 @@ main .site-head {
 
 
 #Portfolio {
-    background-color: rgb(247, 244, 244);
+    background-image: #FFFCDC;
+    background-image: radial-gradient(#fffef6 20%, #fffef4 15%, #f9f2fa 60%);
     width: 100%;
     padding: 7% 0;
     margin-top: 140px;
@@ -199,7 +201,7 @@ main .site-head {
 .big-text h1::after {
     display: block;
     height: 1.5px;
-    background-color: rgb(36, 150, 55);
+    background-color: #1d88b3;
     content: " ";
     width: 100px;
     margin: 0 auto;
@@ -208,52 +210,78 @@ main .site-head {
 }
 
 #Portfolio .cards {
+    /* background-color: yellow; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10% 0 10% 0;
+    padding: 10% 0;
 
-}
-
-.cards .card img {
-    width: 480;
-    height: 200px;
-    margin-right: 10px;
-    opacity: 0.8;
-}
-
-.cards .card:hover {
-    background-color: rgb(41, 37, 37);
-    transition: 0.5s;
 }
 
 .cards .card {
     position: relative;
+    overflow: hidden;
 }
 
-.over-hover {
+.cards .card img {
+    filter: brightness(55%);
+    width: 22rem;
+    height: 250px;
+    margin: 0 .9rem;
+    opacity: 0.9;
+    border: .8px solid rgb(190, 185, 185);
+    box-shadow: 3px 5px 4px rgb(241, 239, 239);
+    transition: all 0.3s ease-out;
+}
+
+
+.description {
+    color: #fff;
     position: absolute;
-    top: 33%;
-    left: 33%;
-    color: #fff;
-    font-size: 3rem;
-    visibility: hidden;
-    opacity: 0.5;
-
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
 }
 
-.over-hover a {
-    color: #fff;
-    background-color: rgb(17, 100, 31);
-    font-size: 2rem;
-    padding: 3px 15px;
-    border-radius: 8px;
+.description h3 {
+    font-weight: 500;
+    margin: 0 0 13px;
+    transform: translateY(30px);
+    opacity: 0;
 }
 
-.cards .card:hover .over-hover {
-    visibility: visible;
+.description a {
+    color: #fff;
+    background-color: rgb(0, 140, 255);
+    padding: 8px 22px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: .3s;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.cards .card img:hover {
+    filter: brightness(20%);
+}
+
+.description a:hover {
+    background-color: rgb(5, 101, 180);
+}
+
+.card:hover .description h3 {
     opacity: 1;
-    transition: 0.4s;
+    transform: translateY(-30px);
+
+}
+
+.card:hover .description a {
+    opacity: 1;
+    transform: translateY(-30px);
 
 }
 
@@ -269,6 +297,7 @@ main .site-head {
 
 
 #about {
+
     width: 100%;
     height: 100vh;
     padding: 3rem;
@@ -308,7 +337,7 @@ main .site-head {
 }
 
 .myprofile h4 a {
-    color: rgb(43, 153, 135);
+    color: #1A5F7A;
 }
 
 .myskills {
@@ -320,23 +349,33 @@ main .site-head {
 .main-about .myskills h3 {
     margin: 5px 0px;
     border-radius: 5px 10px;
-    background-color: rgb(43, 153, 135);
+    background-color: #1A5F7A;
     padding: 10px 20px;
     text-align: left;
     text-transform: capitalize;
 
 }
 
+
+
+
+/* !!!!!!!!!!!!!!!!Contact section!!!!!!!!!!!!!!!! */
+
+
+
 #contact_us {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 2rem;
-    padding: 2rem;
+    display: flex;
+    gap: 4rem;
+    padding: 2rem 3rem;
     height: fit-content;
+
 }
 
 #contact_us .mytext {
     padding: 2rem;
+    background-image: linear-gradient(to bottom right, #1A5F7A, #31a6d4, #186888);
+    color: white;
+
 }
 
 .mytext h1 {
@@ -351,6 +390,7 @@ main .site-head {
 }
 
 form {
+
     padding: 1rem 2rem;
     width: 85%;
 }
@@ -390,19 +430,21 @@ form {
 form .btn {
     margin: 10px;
     padding: .8rem 1.5rem;
-    border-radius: 10px;
-    background-color: #444;
+    border-radius: 3px;
+    background-color: #1c7396;
     text-align: center;
     color: white;
     width: fit-content;
     font-size: 1.2rem;
     font-weight: 600;
     border: none;
+    transition: .3s;
 }
 
 form .btn:hover {
-    background-color: rgb(36, 150, 55);
-    transition: 0.3s;
+    background-color: #1A5F7A;
+
+
 
 }
 
@@ -410,19 +452,22 @@ form .contact-btn a {
     color: white;
 }
 
-button:disabled{
+button:disabled {
     cursor: not-allowed;
 }
-button:disabled:hover{
+
+button:disabled:hover {
     cursor: not-allowed;
     background-color: red;
-    
+
 }
-button:enabled{
+
+button:enabled {
     cursor: pointer;
 }
 
-form input, textarea {
+form input,
+textarea {
     display: block;
     margin: 10px;
     padding: .4rem 1rem;
@@ -435,9 +480,11 @@ form input, textarea {
     outline: none;
 }
 
+/* !!!!!!!!!!!!Footer section !!!!!!!!!!!!!!!!!! */
+
 footer {
     width: 100%;
-    background-color: rgb(66, 65, 65);
+    background-color: #132c36;
     padding: 1rem 2rem;
     text-align: center;
 
@@ -473,10 +520,26 @@ footer {
     color: gray;
 }
 
+
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!Media query!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 
+@media screen and (max-width:837px) {
+    #Portfolio {
 
+        padding: 7% 7% 7% 5%;
+
+    }
+
+
+    .cards .card img {
+        width: 40rem !important;
+        margin-top: 10px;
+
+    }
+
+}
 
 @media screen and (max-width:800px) {
     header nav ul {
@@ -515,15 +578,19 @@ footer {
     }
 
     form .btn {
-        padding: .6rem 1.2rem;
-        font-size: 1rem;
-        font-weight: 500;
+        padding: .7rem 1.4rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition: 0.3s;
     }
 
     form .btn:hover {
-        background-color: rgb(36, 150, 55);
-        transition: 0.3s;
+        background-color: #1A5F7A
+    }
 
+    #contact_us {
+
+        gap: 7rem;
     }
 }
 
@@ -553,34 +620,44 @@ footer {
         height: 150px;
     }
 
+    #contact_us {
+
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        gap: 1rem;
+
+    }
+
     form {
-        padding: 1rem 1rem;
+        padding: 1rem 0;
         width: 100%;
-        margin-left: -20%;
+        margin: auto;
+
+    }
+
+    form input,
+    #message {
+        width: 100%;
+        margin: 8px auto;
     }
 
     form .btn {
-        padding: .6rem 1.2rem;
-        font-size: 1rem;
-        font-weight: 500;
+        padding: .8rem 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition: 0.3s;
     }
 
     form .btn:hover {
-        background-color: rgb(36, 150, 55);
-        transition: 0.3s;
-
+        background-color: #1A5F7A
     }
 }
 
 
 @media screen and (max-width:555px) {
 
-    /* .nav-items .nav-item a{
-        color: white;
-    }
-    nav ul li{
-        background-color: rgb(66, 65, 65);
-    } */
+
 
     nav .logo img {
         height: 40px;
@@ -612,10 +689,17 @@ footer {
 
 
     #Portfolio {
-        padding: 6% 0;
-        margin-top: 200px;
+        padding: 7% 7% 7% 5%;
 
     }
+
+
+    /* .cards .card img {
+        width: 40rem !important;
+        margin-top: 10px;
+
+    } */
+
 
     .big-text h1 {
         font-size: 1.3rem;
@@ -631,19 +715,6 @@ footer {
         width: 380;
         height: 150px;
         margin-right: 6px;
-    }
-
-
-    form {
-        padding: .7rem 1.7rem;
-        margin-right: 10px;
-    }
-
-    form .btn {
-        margin-right: 18px;
-        padding: .7rem 1rem;
-        width: 100px;
-
     }
 
 
@@ -690,23 +761,6 @@ footer {
     .main-about .myprofile h4 {
         font-size: 1.2rem;
     }
-
-    form .btn {
-        padding: .7rem 1.2rem;
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-
-    form .btn:hover {
-        background-color: rgb(36, 150, 55);
-        transition: 0.3s;
-
-    }
-
-    form input, textarea {
-        padding: .3rem .6rem;
-        font-size: .5rem;
-    }
 }
 
 @media screen and (max-width:520px) {
@@ -749,28 +803,6 @@ footer {
         padding-top: 1.7rem;
     }
 
-    form {
-        padding: 1rem 1rem;
-        width: 100%;
-        margin-left: -20%;
-    }
-
-    form .btn {
-        padding: .6rem 1.2rem;
-        font-size: 1rem;
-        font-weight: 500;
-    }
-
-    form .btn:hover {
-        background-color: rgb(36, 150, 55);
-        transition: 0.3s;
-
-    }
-
-    form input, textarea {
-        padding: .5rem .5rem;
-        font-size: .5rem;
-    }
 
     footer .social span {
         font-size: .8rem;
@@ -832,8 +864,5 @@ footer {
         font-size: .7rem;
     }
 
-    form input, textarea {
-        padding: .3rem .4rem;
-        font-size: .4rem;
-    }
+
 }

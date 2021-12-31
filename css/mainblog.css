@@ -176,13 +176,13 @@ nav ul li {
     text-decoration: none;
     /* text-transform: uppercase; */
     border-bottom: 2px solid transparent;
-    -webkit-transition: border-bottom 0.2s;
-    transition: border-bottom 0.2s;
+    -webkit-transition: border-bottom 0.3s;
+    transition: border-bottom 0.3s;
 }
 
 .nav-items .nav-item a:visited,
 .nav-items .nav-item a:hover {
-    border-bottom: 2px solid #2a6086;
+    border-bottom: 2px solid #1e84ac;
     transition: 0.3s;
 
 }
@@ -445,7 +445,7 @@ form .btn {
 footer {
     width: 100%;
     height: auto;
-    background-color: #131627;
+    background-color: #132c36;
 
 }
 
