@@ -92,6 +92,7 @@ button {
 
 button:disabled {
     cursor: not-allowed;
+    background-color: red;
 }
 
 button:enabled {
@@ -120,6 +121,11 @@ button:enabled {
     width: 15px;
     height: 15px;
     border-radius: 50%;
+}
+
+#signup-form .pswdInd {
+    position: absolute;
+    top: 15% !important;
 }
 
 #signup-form .Sindicator.valid {

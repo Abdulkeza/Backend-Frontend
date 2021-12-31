@@ -2,9 +2,10 @@ import { resolvePathname } from "../init-firebase.js";
 
 // Change functions to ES6 structure
 const validate = () => {
-  const form = document.getElementById("form");
   const name = document.getElementById("name");
   const email = document.getElementById("email");
+  var message = document.getElementById("message");
+  const submit = document.querySelector("#submit");
   const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
   form.addEventListener("submit", (e) => {
@@ -15,8 +16,7 @@ const validate = () => {
   let nameIndicator = document.getElementById("nameValid");
 
   try {
-    let namePattern =
-      /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{1,})?)/;
+    var namePattern = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{1,})?)/;
 
     name.addEventListener("keyup", () => {
       if (name.value.match(namePattern)) {
@@ -50,13 +50,31 @@ const validate = () => {
       emailIndicator.classList.remove("valid");
     }
   });
-};
 
-validate();
+  if (!name.value.match(namePattern) || 
+  !email.value.match(pattern) || 
+  message.value == "") {
+    submit.disabled = true;
+  } else {
+    submit.disabled= false;
+    
+
+  }
+}
+ 
+var form = document.getElementById("form");
+form.addEventListener("change", ()=>{
+  validate();
+  
+});
+
+
+
+
 
 //Submitting user questions/comments
 
-const form = document.querySelector("form");
+var form = document.querySelector("form");
 const button = document.querySelectorAll(".btn");
 
 var Qref = firebase.database().ref("Questions/");
@@ -76,16 +94,14 @@ try {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     saveQuestion(form.name.value, form.email.value, form.message.value);
-    
+
     Swal.fire({
-      Text: "Successfully submitted",
+      text: "Successfully submitted",
       icone: "success",
     });
-
+    form.reset();
     setTimeout(() => {
-      window.location.pathname = resolvePathname("index.html");
-    }, 5000);
+      window.location.pathname = resolvePathname("/index.html");
+    }, 3000);
   });
 } catch (error) {}
-
-

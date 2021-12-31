@@ -410,6 +410,18 @@ form .contact-btn a {
     color: white;
 }
 
+button:disabled{
+    cursor: not-allowed;
+}
+button:disabled:hover{
+    cursor: not-allowed;
+    background-color: red;
+    
+}
+button:enabled{
+    cursor: pointer;
+}
+
 form input, textarea {
     display: block;
     margin: 10px;

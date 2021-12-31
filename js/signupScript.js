@@ -6,6 +6,8 @@ function validate() {
   const password1 = document.getElementById("password1");
   const password2 = document.getElementById("password2");
   const submit = document.querySelector("#submit");
+  const emailInnerText = document.getElementById("E-innerText");
+  const pswdInnerText = document.getElementById("pswd-innerText");
 
   var nameIndicator = document.getElementById("nameValid");
   var LnameIndicator = document.getElementById("LnameValid");
@@ -36,9 +38,14 @@ function validate() {
     if (email.value.match(emailPattern)) {
       emailIndicator.classList.add("valid");
       emailIndicator.classList.remove("invalid");
+      emailInnerText.innerHTML = "Your email is valid.";
+      emailInnerText.style.color = "#00ff00";
     } else {
       emailIndicator.classList.add("invalid");
       emailIndicator.classList.remove("valid");
+      emailInnerText.innerHTML = "You entered invalid email.";
+      emailInnerText.style.color = "#ff0000";
+
     }
     if (email.value == "") {
       emailIndicator.classList.remove("invalid");
@@ -48,16 +55,20 @@ function validate() {
 
   //validating password
 
-  const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{3,}$/;
   var passwordIndicator = document.getElementById("password1Valid");
 
   password1.addEventListener("keyup", () => {
     if (password1.value.match(passwordPattern)) {
       passwordIndicator.classList.add("valid");
       passwordIndicator.classList.remove("invalid");
+      pswdInnerText.innerHTML ="You entered valid password";
+      pswdInnerText.style.color = "#00ff00";
     } else {
       passwordIndicator.classList.add("invalid");
       passwordIndicator.classList.remove("valid");
+      pswdInnerText.innerHTML = " -should be at least 3 chracter <br>- 1 uppercase, 1 lowercase, a number.";
+      pswdInnerText.style.color = "#ff0000";
     }
     if (password1.value == "") {
       passwordIndicator.classList.remove("invalid");
