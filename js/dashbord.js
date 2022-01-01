@@ -89,6 +89,7 @@ try {
       let articleId = e.target.getAttribute("data-key");
       //above statement help us to get the ID of a post
       console.log("ArticleId", articleId);
+
       postRef
         .child(articleId)
         //above line help us to access every single element of content
@@ -197,7 +198,7 @@ var updatePost = (articleId, data) => {
    *      articleID: to find the article being editted
    *      data: collected from the submitted form*/
 
-  postRef.child(articleId).update(data); 
+  postRef.child(articleId).update(data);
 
   // To-Do
   //Check if a given field was edited or not.
@@ -210,18 +211,11 @@ var updatePost = (articleId, data) => {
   // Notify a user
 };
 
-
-
-
-
 // var imagesRef = firebase.database().ref("Images");
 // var editForm = document.getElementById("#editForm").addEventListener("submit", submitForm);
 
-
 // //uploading file in storage
 // try {
-  
-
 
 // function uploadimage() {
 //   var type = getInputVal("types");
@@ -250,13 +244,7 @@ var updatePost = (articleId, data) => {
 //   // Save message
 //   // saveMessage(url);
 // }
-// uploadimage() 
+// uploadimage()
 // } catch (error) {
-  
+
 // }
-
-
-
-
-
-

@@ -111,6 +111,7 @@ nav ul li {
     transition: border-bottom 0.3s;
 }
 
+
 .nav-items .nav-item a:hover {
     border-bottom: 2px solid #1e84ac;
     transition: .3s;
@@ -234,6 +235,9 @@ main .site-head {
     transition: all 0.3s ease-out;
 }
 
+.cards .card img:hover {
+    filter: brightness(20%);
+}
 
 .description {
     color: #fff;
@@ -251,6 +255,7 @@ main .site-head {
     margin: 0 0 13px;
     transform: translateY(30px);
     opacity: 0;
+    transition: all .3s ease-out;
 }
 
 .description a {
@@ -260,14 +265,13 @@ main .site-head {
     display: inline-block;
     text-decoration: none;
     border-radius: 3px;
-    transition: .3s;
+    transition: all .3s ease-out .3s;
     transform: translateY(30px);
     opacity: 0;
 }
 
-.cards .card img:hover {
-    filter: brightness(20%);
-}
+
+
 
 .description a:hover {
     background-color: rgb(5, 101, 180);

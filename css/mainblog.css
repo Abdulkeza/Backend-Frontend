@@ -221,9 +221,9 @@ nav ul li {
 }
 
 .article {
+    /* background-color: tomato; */
     margin-bottom: 50px;
     box-shadow: 2px 3px 4px #b1b0b0;
-    /* padding-bottom: 2rem; */
     padding: 0 2rem 2rem 2rem;
 }
 

@@ -45,7 +45,17 @@ header #logged-user {
     margin: auto;
     padding: 1rem .5rem;
     box-shadow: 3px 5px 6px rgb(218, 212, 212);
+    position: relative;
 
+}
+.message img{
+    width: 1.5rem;
+    position: absolute;
+    right: 2%;
+    top: 3%;
+}
+.message img:hover{
+    cursor: pointer;
 }
 
 .message h3 {
