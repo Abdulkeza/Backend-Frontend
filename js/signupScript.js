@@ -45,7 +45,6 @@ function validate() {
       emailIndicator.classList.remove("valid");
       emailInnerText.innerHTML = "You entered invalid email.";
       emailInnerText.style.color = "#ff0000";
-
     }
     if (email.value == "") {
       emailIndicator.classList.remove("invalid");
@@ -62,12 +61,13 @@ function validate() {
     if (password1.value.match(passwordPattern)) {
       passwordIndicator.classList.add("valid");
       passwordIndicator.classList.remove("invalid");
-      pswdInnerText.innerHTML ="You entered valid password";
+      pswdInnerText.innerHTML = "You entered valid password";
       pswdInnerText.style.color = "#00ff00";
     } else {
       passwordIndicator.classList.add("invalid");
       passwordIndicator.classList.remove("valid");
-      pswdInnerText.innerHTML = " -should be at least 3 chracter <br>- 1 uppercase, 1 lowercase, a number.";
+      pswdInnerText.innerHTML =
+        " -should be at least 3 chracter <br>- 1 uppercase, 1 lowercase, a number.";
       pswdInnerText.style.color = "#ff0000";
     }
     if (password1.value == "") {
