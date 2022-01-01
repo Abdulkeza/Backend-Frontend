@@ -23,8 +23,9 @@ body {
 
 .login-form {
     width: 30%;
-    height: 300px;
-    margin: 40px auto;
+    height: 380px;
+    margin: 20px auto;
+    margin-top: 4rem !important;
     background-color: white;
     border-radius: 3px;
     border: 1px solid rgb(233, 227, 227);
@@ -176,6 +177,7 @@ p {
 .para-2 a {
     color: #005374;
     border: none;
+    font-size: 1.1rem;
 }
 
 .log-para {
@@ -214,6 +216,7 @@ p {
 .back {
     text-transform: lowercase;
 }
+
 
 body {
     padding-bottom: 2rem;

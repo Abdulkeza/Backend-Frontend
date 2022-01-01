@@ -1,4 +1,4 @@
-console.log("initialization of firebase lemmemgo");
+console.log("initialization of firebase Successed");
 
 const firebaseConfig = {
   apiKey: "AIzaSyBzTdedYr_iahsV7dDur9FEzSXgeuVs7cI",

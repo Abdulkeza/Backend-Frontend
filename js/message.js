@@ -1,3 +1,5 @@
+import { resolvePathname } from "../init-firebase.js";
+
 const auth = firebase.auth();
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -8,6 +10,23 @@ firebase.auth().onAuthStateChanged((user) => {
     });
   }
 });
+
+var logout = document.getElementById("log-out");
+try {
+  logout.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    auth.signOut().then(() => {
+      setTimeout(() => {
+        window.location.pathname = resolvePathname("/blog.html");
+        // window.location.pathname = "blog.html";
+      }, 1000);
+      console.log("logged out");
+    });
+  });
+} catch (error) {
+  console.log(error);
+}
 
 //displaying messages
 
@@ -22,9 +41,9 @@ var displayMessage = () => {
 
     for (let message in messages) {
       let tr = `
-        <div >
+        <div class ="main-message">
          <div class= "message" data-id = '${message}'>
-         <button class="delete" data-id = '${message}' > <img src="../img/Delete.png" alt="Delete" > </button>
+         <button > <img src="../img/Delete.png" alt="Delete" class="delete" data-id = '${message}' > </button>
          <h3>${messages[message].name} </h3>
          <h4>Email: ${messages[message].email} </h4>
          <p>${messages[message].message}</p>
@@ -32,6 +51,7 @@ var displayMessage = () => {
          </div>
 
         </div>`;
+      // userMessage.insertBefore(tr, userMessage.firstChild)
       userMessage.innerHTML += tr;
     }
   });
@@ -46,14 +66,8 @@ try {
 
     if (target.matches(".delete")) {
       let messageId = e.target.getAttribute("data-id");
-      // messageRef.child(messageId).remove();
-
-      console.log("message deleted");
+      messageRef.child(messageId).remove();
     }
-    // Delete.addEventListener("click", (e)=>{
-    //   e.preventDefault()
-    //   console.log("Delete button Clicked");
-    // })
   });
 } catch (error) {
   console.log(error);

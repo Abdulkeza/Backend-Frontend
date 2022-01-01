@@ -24,7 +24,7 @@ function validate() {
     }
   });
 
-  const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{3,}$/;
   var passwordIndicator = document.getElementById("passwordValid");
 
   password.addEventListener("keyup", () => {

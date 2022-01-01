@@ -202,8 +202,6 @@ var updatePost = (articleId, data) => {
 
   // To-Do
   //Check if a given field was edited or not.
-  //It is not efficient to update all fields, even when they were not changed.
-  //Look for field properties which allow us to know if a given field has changed.
   Swal.fire({
     text: "Article Updated",
     icone: "success",
@@ -211,40 +209,28 @@ var updatePost = (articleId, data) => {
   // Notify a user
 };
 
-// var imagesRef = firebase.database().ref("Images");
-// var editForm = document.getElementById("#editForm").addEventListener("submit", submitForm);
+// Logout and Displaying user
 
-// //uploading file in storage
-// try {
+const auth = firebase.auth();
 
-// function uploadimage() {
-//   var type = getInputVal("types");
-//   var storage = firebase.storage();
-//   var file = document.getElementById("imgFile").files[0];
-//   var storageref = storage.ref();
-//   var thisref = storageref.child(type).child(file.name).put(file);
-//   thisref.on(
-//     "state_changed",
-//     function (snapshot) {},
-//     function (error) {},
-//     function () {
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    var uid = user.uid;
+    document.querySelectorAll(".user-name").forEach((element) => {
+      element.innerHTML = user.displayName;
+    });
+  }
+});
 
-//       console.log("image uploaded Successfully");
-//       // Uploaded completed successfully, now we can get the download URL
-//       thisref.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-//         //getting url of image
-//         document.getElementById("url ").value = downloadURL;
-//         alert("uploaded successfully");
-//         saveMessage(downloadURL);
-//       });
-//     }
-//   );
-//   // Get values
-//   var url = getInputVal("url");
-//   // Save message
-//   // saveMessage(url);
-// }
-// uploadimage()
-// } catch (error) {
+var logout = document.getElementById("log-out");
 
-// }
+logout.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  auth.signOut().then(() => {
+    setTimeout(() => {
+      window.location.pathname = resolvePathname("/blog.html");
+    }, 1000);
+    console.log("logged out");
+  });
+});

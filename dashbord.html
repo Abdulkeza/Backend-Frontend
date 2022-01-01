@@ -12,16 +12,19 @@
     <link rel="stylesheet" href="./css/mainblog.css">
     <title>Blog Dashboard</title>
 
+
 </head>
 
 <body>
     <header>
+        <a class=" user-name logged-in" id="logged-user" href="#p"></a>
+
         <a href="./index.html"> <img src="./img/logo3" alt="EAGLE"></a>
 
 
         <div class="btn logged-in" id="in-button">
             <a href="./blog.html">Home</a>
-            <a href="./blog.html" id="log-out">Logout</a>
+            <a href="#p" id="log-out">Logout</a>
             <!-- <a href="#" class="profile"><span><img src="./img/profile.jpg" alt="Profile"> </span></a> -->
         </div>
 
@@ -68,7 +71,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
+
 
     <script defer src="./js/dashbord.js" type="module"></script>
     <script defer src="./js/blog.js"></script>

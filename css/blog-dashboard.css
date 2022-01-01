@@ -28,8 +28,19 @@ header img {
   top: 25%;
 }
 
+#logged-user {
+  color: #2a6086;
+  width: 18%;
+  background: none !important;
+  text-align: center;
+  margin-left: 40%;
+  font-size: .8em;
+  padding: 5px !important;
+
+}
+
 .main-dash {
-  min-height: 65vh;
+  min-height: 80vh;
   background-color: #e9decf;
   display: flex;
   flex-direction: column;
@@ -78,7 +89,7 @@ header img {
 }
 
 #action tbody td button.edit {
-  background-color: #2a6086
+  background-color: #2a6086;
 }
 
 #action tbody td button.remove {
@@ -110,6 +121,24 @@ footer #message {
   transition: .3s;
 
 }
-footer #message:hover{
+
+footer #message:hover {
   color: white;
+}
+
+
+
+/*!!!!!!!!!!!!!!! media Querry!!!!!!!!!!!!!!!!! */
+
+@media screen and (max-width:792px) {
+
+  #action tbody td button.edit {
+    padding: .3rem;
+    font-size: .5rem;
+  }
+
+  #action tbody td button.remove {
+    padding: .3rem;
+    font-size: .5em;
+  }
 }

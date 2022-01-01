@@ -6,7 +6,7 @@ const validate = () => {
   const email = document.getElementById("email");
   var message = document.getElementById("message");
   const submit = document.querySelector("#submit");
-  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
