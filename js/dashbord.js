@@ -96,7 +96,6 @@ try {
           .then((res) => {
             console.log(res.json());
 
-            // window.setTimeout(() =>{location.reload()},2000)
           })
           .then((response) => {
             console.log(response);
