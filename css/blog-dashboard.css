@@ -96,13 +96,16 @@ header img {
   background-color: rgb(180, 33, 7);
 }
 
-#add-article {
+.add-article {
   background-color: #2a6086;
-  margin-top: 1.6rem;
+  margin: 2rem auto;
   padding: 0.8rem 1.6rem;
   cursor: pointer;
   color: #fff;
   font-size: 1.2rem;
+}
+.main-user{
+  border-top: 2px solid rgb(143, 138, 138);
 }
 
 footer {

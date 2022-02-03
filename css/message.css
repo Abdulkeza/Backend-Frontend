@@ -22,20 +22,40 @@ header #logged-user {
 }
 
 .messageTitle {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
+    padding: 3rem 2rem;
     text-transform: uppercase;
     font-size: 1rem;
+    display: flex;
+    justify-content: center;
+   
 }
-
+#msg{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* float: right; */
+    
+}
 .messages {
 
-    padding: .2rem 1.5rem;
+    padding: .2rem 1rem;
     min-height: 100vh;
-
+    width: 100%;
+    /* float: right; */
 }
 
+/* .users{
+    background-color: red;
+    width: 40%;
+    float: left;
+    margin-left: 4%;
+    box-shadow: .6px .4px 2px rgb(204, 193, 193);
+} */
+/* #user{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+} */
 
 .messages .message {
     background: #fff;
@@ -56,9 +76,9 @@ header #logged-user {
     right: 2%;
     top: 3%;
 }
-/* .message img:hover{
+.message img:hover{
     cursor: pointer;
-} */
+}
 
 .message h3 {
     margin-bottom: .8rem;

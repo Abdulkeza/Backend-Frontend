@@ -1,236 +1,220 @@
 // import Swal from "../sweetalert2";
 import { resolvePathname } from "../init-firebase.js";
 
-const form = document.querySelector("form");
 const tbody = document.querySelector(".post-table");
+const form = document.querySelectorAll("form");
 const edit = document.querySelectorAll(".edit");
 const remove = document.querySelectorAll(".remove");
-const addNew = document.getElementById("add-article");
-const save = document.getElementById("save");
+const addNew = document.querySelectorAll(".add-article");
 
-var postRef = firebase.database().ref("posts/");
+// const url = "http://localhost:9000/api/v1/blogs";
+const url = "https://adeoapi.herokuapp.com/api/v1/blogs";
 
-// write data
+const titleValue = document.getElementById("title");
+const authorValue = document.getElementById("author");
+const textValue = document.getElementById("text");
+let blogArticle = document.querySelector(".articles");
 
-var savePost = (title, author, text) => {
-  //savePost helpus us to create new artical with 3 parameters and push it to postRef(our database refarence)
-  var newPostRef = postRef.push();
-  newPostRef.set({
-    title: title,
-    author: author,
-    text: text,
-  });
+//read section in dashboard
+const read = async () => {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      // console.log(data);
 
-  Swal.fire({
-    text: "Article added",
-    icone: "success",
-  });
-  // console.log("new Artical added");
+      let articles = data.blogs;
 
-  /*
-  Use the above implementation or the function to define a proper notification
-  
-  */
-  //   ($(".post-table").innerHTML = ""), listPosts();
-};
-
-if (window.location.pathname == resolvePathname("/newArtical.html")) {
-  try {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      savePost(form.title.value, form.author.value, form.text.value);
-      setTimeout(() => {
-        window.location.pathname = resolvePathname("/dashbord.html");
-      }, 3000);
-    });
-  } catch (error) {}
-}
-
-//read section
-
-function read() {
-  postRef.on("value", (snapshot) => {
-    let articles = snapshot.val();
-    try {
-      tbody.innerHTML = "";
-      Object.keys(articles).forEach((key) => {
-        let article = articles[key];
-        console.log(key);
-
-        let tr = `
+      try {
+        tbody.innerHTML = "";
+        articles.forEach((article) => {
+          let tr = `
           <tr >
     
-              <td>${article.title}</td>
+              <td>${article.title} </td>
               <td>${article.author}</td>
               
               <td>
-                  <button class="edit" data-key = '${key}'>Edit</button>
-                  <button class="remove" data-key = '${key}'>Delete</button>
+                  <button class="edit" data-key = '${article._id}' myTitle = '${article.title} author='${article.author}'>Edit</button>
+                  <button class="remove" data-key = '${article._id}'>Delete</button>
               </td>
           </tr>`;
-        tbody.innerHTML += tr;
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  });
-}
+          tbody.innerHTML += tr;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    });
+};
 
 read();
 
-const postTable = document.querySelector(".post-table");
-
 //Edit and Delete button/Actions
 
+const postTable = document.querySelector(".post-table");
+const editForm = document.getElementById("editForm");
+
+const token = localStorage.getItem("token");
+
 try {
-  postTable.addEventListener("click", (e) => {
+  postTable.addEventListener("click", async (e) => {
     const { target } = e;
+
     if (target.matches("tr td button.edit")) {
       let articleId = e.target.getAttribute("data-key");
-      //above statement help us to get the ID of a post
-      console.log("ArticleId", articleId);
 
-      postRef
-        .child(articleId)
-        //above line help us to access every single element of content
-        .get()
-        .then((snapshot) => {
-          console.log(snapshot.val());
-          localStorage.setItem("activeEdit", articleId);
-          //above function help us to set the name of article and ID as activeEdit with articleId
+      const getArticle = async () => {
+        fetch(`${url}/${articleId}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log(data);
 
-          setTimeout(() => {
-            window.location.pathname = resolvePathname("/edit.html");
-          }, 300); //use small time
+            var localID = localStorage.setItem("activeEdit", articleId);
 
-          // A user should receive an instant effect after clicking a button
-          // That is why you should not use the timeout function or reduce the
-          // time to an untociable time to simulate page loading
-        });
+            // let savedID = window.localStorage.getItem("activeEdit");
+            // console.log("Local ID ", savedID);
+
+            setTimeout(() => {
+              window.location.pathname = resolvePathname("/edit.html");
+            }, 1000);
+          });
+      };
+
+      getArticle();
     } else if (target.matches(".remove")) {
-      let articleId = e.target.getAttribute("data-key");
-      console.log("ArticleID ", articleId);
+      const deletePost = () => {
+        let articleId = e.target.getAttribute("data-key");
+        console.log(articleId);
 
+        //Fetch delete post
+        fetch(`${url}/${articleId}`, {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        })
+          .then((res) => {
+            console.log(res.json());
+
+            // window.setTimeout(() =>{location.reload()},2000)
+          })
+          .then((response) => {
+            console.log(response);
+          })
+
+          .catch((err) => {});
+      };
+
+      //!!Notify a user
       swal({
         title: "Are you sure you want to delete this Article?",
         text: "Once deleted, it will be lost permonently",
         icon: "warning",
         buttons: true,
         dangerMode: true,
-      }).then((willDelete) => {
-        //To use the promise callback, please refer to this.
-        // https://sweetalert2.github.io/#:~:text=A%20confirm%20dialog%2C%20with%20a%20function%20attached%20to%20the%20%22Confirm%22%2Dbutton
-        if (willDelete) {
-          postRef.child(articleId).remove();
+      }).then((proceedDelete) => {
+        console.log(proceedDelete);
 
-          //change this call also
+        if (proceedDelete) {
+          deletePost();
+
           swal("Article deleted!", {
             icon: "success",
           });
+          window.setTimeout(() => {
+            location.reload();
+          }, 2000);
         }
       });
     }
   });
 } catch (error) {}
 
-//Editting Article Section
+//!!Displaying all users
+// const userUrl = "http://localhost:9000/api/v1/users";
+const userUrl = "https://adeoapi.herokuapp.com/api/v1/users";
 
-if (window.location.pathname == resolvePathname("/edit.html")) {
-  let title = document.getElementById("title");
-  let author = document.getElementById("author");
-  let text = document.getElementById("text");
+const userBody = document.querySelector(".user-table");
 
-  if (localStorage !== null) {
-    let articleId = localStorage.getItem("activeEdit");
-    // What happens when there is no ID stored in Localstorage
+const readUser = async () => {
+  const token = localStorage.getItem("token");
+  fetch(userUrl, {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // console.log(data);
 
-    postRef
-      .child(articleId)
-      //Accessing individual element of post
-      .get()
-      .then((snapshot) => {
-        title.value = snapshot.val().title;
-        author.value = snapshot.val().author;
-        text.value = snapshot.val().text;
-      });
+      let users = data.users;
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      title = title.value;
-      author = author.value;
-      text = text.value;
-
-      let data = {
-        title: title,
-        text: text,
-      };
-      updatePost(articleId, data);
-      //Calling updatePost function for updating post
-
-      console.log("no Article available");
-      setTimeout(() => {
-        window.location.pathname = resolvePathname("/dashbord.html");
-      }, 2000); // 4 seconds is a long time to wait for process
-      // At least keep it at 2 and show a loader.
-      //Look through fontawesome library
+      try {
+        userBody.innerHTML = "";
+        users.forEach((user) => {
+          let tr = `
+          <tr >
+    
+              <td>${user.name} </td>
+              <td>${user.email}</td>
+              
+              <td>
+                  <button class="edit" user-key = '${user._id}' myName = '${user.name} email='${user.email}'>Edit</button>
+                  <button class="remove" user-key = '${user._id}'>Delete</button>
+              </td>
+          </tr>`;
+          userBody.innerHTML += tr;
+        });
+      } catch (error) {
+        console.log(error);
+      }
     });
-
-    const cancel = document.getElementById("cancel");
-    cancel.addEventListener("click", () => {
-      console.log("cancel clicked");
-      localStorage.removeItem("activeEdit", articleId);
-      //This one is great
-
-      setTimeout(() => {
-        window.location.pathname = resolvePathname("/dashbord.html");
-      }, 2000);
-    });
-  } else {
-    console.log("No Article available");
-    setTimeout(() => {
-      window.location.pathname = resolvePathname("/blog.html");
-    }, 2000);
-  }
-}
-
-var updatePost = (articleId, data) => {
-  /** We take two parameter:
-   *      articleID: to find the article being editted
-   *      data: collected from the submitted form*/
-
-  postRef.child(articleId).update(data);
-
-  // To-Do
-  //Check if a given field was edited or not.
-  Swal.fire({
-    text: "Article Updated",
-    icone: "success",
-  });
-  // Notify a user
 };
 
-// Logout and Displaying user
+readUser();
 
-const auth = firebase.auth();
+//!!delete a user
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    var uid = user.uid;
-    document.querySelectorAll(".user-name").forEach((element) => {
-      element.innerHTML = user.displayName;
-    });
-  }
-});
-
-var logout = document.getElementById("log-out");
-
-logout.addEventListener("click", (e) => {
+userBody.addEventListener("click", (e) => {
   e.preventDefault();
+  const { target } = e;
 
-  auth.signOut().then(() => {
-    setTimeout(() => {
-      window.location.pathname = resolvePathname("/blog.html");
-    }, 1000);
-    console.log("logged out");
+  const deleteUser = () => {
+    if (target.matches("tr td button.remove")) {
+      let userId = e.target.getAttribute("user-key");
+
+      fetch(`${userUrl}/${userId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      }).then((response) => {
+        console.log(response);
+      });
+    }
+  };
+
+  swal({
+    title: "Are you sure you want to delete this user?",
+    text: "Once deleted, he/she will be lost",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((proceedDelete) => {
+    console.log(proceedDelete);
+
+    if (proceedDelete) {
+      deleteUser();
+
+      swal("Article deleted!", {
+        icon: "success",
+      });
+      window.setTimeout(() => {
+        location.reload();
+      }, 2000);
+    }
   });
 });

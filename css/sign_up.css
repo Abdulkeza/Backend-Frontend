@@ -141,7 +141,7 @@ button:enabled {
     background-size: cover;
 }
 
-.indicator.valid {
+/* .indicator.valid {
     background: #0f0;
     box-shadow: 0 0 5px #0f0,
         0 0 10px #0f0,
@@ -157,7 +157,7 @@ button:enabled {
         0 0 20px #f00,
         0 0 40px #f00;
 
-}
+} */
 
 p {
     text-align: center;

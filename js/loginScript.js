@@ -45,30 +45,68 @@ function validate() {
 }
 validate();
 
-const form = document.getElementById("form");
+// const url = "http://localhost:9000/api/v1/users/login";
+const url = "https://adeoapi.herokuapp.com/api/v1/users/login"
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      let user = userCredential.user;
+//!!User Login
+const loginUser = (data) => {
+
+  // let user = {
+  //   email: email.value,
+  //   password: password.value,
+  // }
+  $.ajax({
+    url: url,
+    method: "POST",
+    data: data,
+    success: (response) => {
+      console.log(response)
+      const user = {
+        id: response.id,
+        name: response.name,
+      };
+
+      localStorage.setItem("user", JSON.stringify(user))
+      localStorage.setItem("token", response.authToken);
+      localStorage.setItem("authenticated", true);
+
       showNotification(
-        `Welcome <b>${user.displayName}. You are being redirected`,
+        `Welcome <b>${user.name}. You are being redirected`,
         undefined,
         5000
       );
 
       setTimeout(() => {
         window.location.pathname = resolvePathname("/blog.html");
-      }, 2500);
-    })
-    .catch((error) => {
-      console.log(error);
-      showNotification(`<b>${error.message}</b>`, "error");
-    });
+      }, 3000);
+    },
+  }).catch((error) => {
+    console.log(error);
+    showNotification(`<b>${error.message}</b>`, "error");
+  });
+};
+
+//!!Form for Login
+const loginForm = document.getElementById("form");
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  try {
+    const email = loginForm.email.value;
+    const password = loginForm.password.value;
+
+    if (!email || !password) {
+      // showNotification(`<b>Invalid credentials</b>`);
+    } else {
+      const data = { email: email, password: password };
+
+      loginUser(data);
+    }
+  } catch (error) {
+    showNotification(`<b>${error.message}</b>`, "error");
+  }
 });

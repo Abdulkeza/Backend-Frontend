@@ -107,44 +107,58 @@ function validate() {
   }
 }
 
-const form = document.getElementById("signup-form");
-form.addEventListener("change", () => {
+const Form = document.getElementById("signup-form");
+Form.addEventListener("change", () => {
   validate();
 });
 
-//reading data from database to console
 
-function signupRegister(name, password, email) {
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      var user = userCredential.user;
-      console.log("User created");
-      user.updateProfile({
-        displayName: name,
-      });
+//!!Register a new user
+// const url = "http://localhost:9000/api/v1/users/register";
+const url = "https://adeoapi.herokuapp.com/api/v1/users/register";
+
+const form = document.querySelector("form");
+
+const password2 = document.getElementById("password2");
+const submit = document.querySelector("#submit");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const password1 = document.getElementById("password1");
+
+  let myBody = {
+    name: name.value,
+    email: email.value,
+    password: password1.value,
+  };
+
+  $.ajax({
+    url: url,
+    data: myBody,
+    method: "POST",
+    success: (response) => {
+
       showNotification(
-        `Dear <b class="text-primary">${name}</b>, Your account has been created.`
+        `Dear <b class="text-primary">${response.name}</b>, Your account has been created.`
       );
-      console.log("Profie updated");
+      console.log(response);
 
       setTimeout(() => {
-        window.location.pathname = resolvePathname("/blog.html");
+        window.location.pathname = resolvePathname("/login.html");
       }, 4000);
-    })
-
-    .catch((error) => {
+          
+    },
+    
+    error: (error) => {
       console.log(error);
       showNotification(error.message, "error");
-    });
-}
+    },
+  });
 
-document.getElementById("signup-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  let name, password, email;
-  name = document.getElementById("name").value;
-  password = document.getElementById("password1").value;
-  email = document.getElementById("email").value;
-  signupRegister(name, password, email);
 });
+
+
+

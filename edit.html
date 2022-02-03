@@ -12,33 +12,26 @@
 
 <body>
     <div class="container">
-         <header>
+        <header>
             <a href="./index.html">Home</a>
         </header>
-        <form action="">
-            <input type="file" placeholder="Image" name="file" id="imgFile">
+        <form id="editForm">
             <input type="text" placeholder="Title" name="title" id="title">
             <input type="text" placeholder="Author" name="author" id="author" disabled>
-            <textarea name="text" cols="30" rows="25" id="text"></textarea>
-            <div name="text">
-                <div id="toolbar"></div>
-                <div id="editor"></div>
-            </div>
-            <div class="bottom-action">
-                <input type="submit" value="Cancel" id="cancel">
-                <input type="submit" value="Save" id="save">
+            <textarea name="body" cols="30" rows="25" id="text"></textarea>
+            
+            <div class="bottom-action">   
+                <button id="cancel">Cancel</button>
+                <button id="save" type="submit">Save</button>
             </div>
         </form>
     </div>
 
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script defer src="./init-firebase.js" type="module"></script>
 
+    <script defer src="./resolvePath.js" type="module"></script>
 
-    <script defer src="./js/dashbord.js" type="module"></script>
+    <script defer src="./js/edit.js" type="module"></script>
+    <!-- <script defer src="./js/dashbord.js" type="module"></script> -->
 </body>

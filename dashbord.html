@@ -10,7 +10,7 @@
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/mainblog.css">
-    <title>Blog Dashboard</title>
+    <title>Blog | users Dashboard</title>
 
 
 </head>
@@ -35,7 +35,6 @@
             <caption>Articles</caption>
             <thead>
                 <tr>
-                    <!-- <td>No</td> -->
                     <td>Title</td>
                     <td>Author</td>
                     <td>Actions</td>
@@ -50,18 +49,38 @@
 
             </tbody>
         </table>
-        <a href="./newArtical.html"><button id="add-article">Add New</button></a>
+        <a href="./newArtical.html"><button class="add-article">Add New</button></a>
+    </div>
+
+
+
+    <!-- user section -->
+    <div class="main-dash main-user ">
+        <table id="action">
+            <caption>Users</caption>
+            <thead>
+                <tr>
+                    <td>user-name</td>
+                    <td>email</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody class="user-table">
+                <tr>
+
+                    <td colspan="4">Users loading</td>
+
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 
     <footer>
         <a href="./message.html" id="message">messages >></a>
     </footer>
 
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    
 
     <script defer src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script defer src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
@@ -74,7 +93,8 @@
 
 
     <script defer src="./js/dashbord.js" type="module"></script>
-    <script defer src="./js/blog.js"></script>
+    <script defer src="./js/blog.js" type="module"></script>
+    <!-- <script defer src="./js//edit.js" type="module" ></script> -->
 
 </body>
 
